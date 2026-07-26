@@ -70,6 +70,16 @@ cd out && python3 -m http.server 4173
 Redirects and image optimisation need a server, so the export substitutes
 meta-refresh stubs for `/projects` and `/legal` and turns optimisation off.
 
+Deploying the demo to GitHub Pages, which serves under `/<repo>`:
+
+```bash
+DEMO_EXPORT=1 BASE_PATH=/website-v4 pnpm exec next build
+BASE_PATH=/website-v4 node scripts/export_redirects.mjs
+touch out/.nojekyll
+```
+
+Then push `out/` to the `gh-pages` branch.
+
 ## Deployment
 
 Vercel, on push to `main`. `postbuild` regenerates the sitemap.
