@@ -56,16 +56,6 @@ and is not part of this repository. It publishes the subset listed in its
 `build_pdfs.py` needs `pandoc` and Chrome. Set `CHROME_PATH` if Chrome is not in
 the default location.
 
-## Conventions
-
-- Statistics without a verified source render as a placeholder rather than a
-  number. See `StatCell`.
-- LinkScape is a fiscally sponsored project of Hack Club, not an independent
-  501(c)(3). The approved wording is `site.fiscalSponsor.statement`.
-- Reduced-motion handling changes animation timing only, never the rendered
-  tree, so server and client markup always match.
-- Generated figures ship as a light and a dark file because an SVG in an `<img>`
-  cannot inherit the page theme.
 
 ## Deployment
 
