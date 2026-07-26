@@ -57,6 +57,19 @@ and is not part of this repository. It publishes the subset listed in its
 the default location.
 
 
+## Offline demo
+
+`pnpm demo` writes a self-contained site to `out/`. Serve it with any static
+file server; there is no Node process to run.
+
+```bash
+pnpm demo
+cd out && python3 -m http.server 4173
+```
+
+Redirects and image optimisation need a server, so the export substitutes
+meta-refresh stubs for `/projects` and `/legal` and turns optimisation off.
+
 ## Deployment
 
 Vercel, on push to `main`. `postbuild` regenerates the sitemap.

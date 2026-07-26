@@ -8,7 +8,8 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "docs:build": "node scripts/build-governance.mjs"
+    "docs:build": "node scripts/build-governance.mjs",
+    "demo": "DEMO_EXPORT=1 next build && node scripts/export_redirects.mjs"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.6.0",
