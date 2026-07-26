@@ -13,11 +13,17 @@ const remotePatterns = [
   { protocol: "https", hostname: "assets.ohevan.com" },
 ];
 
+// GitHub Pages serves a project site under /<repo>, so the export needs a
+// base path. Leave BASE_PATH unset to export for a domain root.
+const basePath = process.env.BASE_PATH ?? "";
+
 const nextConfig = isExport
   ? {
       reactStrictMode: true,
       output: "export",
       trailingSlash: true,
+      basePath,
+      env: { NEXT_PUBLIC_BASE_PATH: basePath },
       images: { remotePatterns, unoptimized: true },
     }
   : {

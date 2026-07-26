@@ -10,6 +10,7 @@ import { Chip } from "@/components/ui/chip";
 import { docsByDomain, allDocs } from "@/lib/governance";
 import { registerStats } from "@/content/doc-register";
 import { site } from "@/content/site";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Governance",
@@ -125,7 +126,7 @@ export default function GovernancePage() {
                   <div className="flex shrink-0 items-center gap-2 sm:flex-col sm:items-end">
                     <Chip tone="green">{doc.status}</Chip>
                     <a
-                      href={`/governance/${doc.id}.pdf`}
+                      href={asset(`/governance/${doc.id}.pdf`)}
                       className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
                     >
                       <Download className="h-3 w-3" />

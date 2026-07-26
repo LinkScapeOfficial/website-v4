@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { WorkFigure } from "@/content/work";
+import { asset } from "@/lib/asset";
 
 /**
  * Generated charts ship as a light and a dark file: an SVG in an <img> cannot
@@ -33,13 +34,13 @@ export default function Figure({
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${figure.src}-light.svg`}
+              src={asset(`${figure.src}-light.svg`)}
               alt={figure.alt}
               className="absolute inset-0 h-full w-full p-3 sm:p-4 dark:hidden"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${figure.src}-dark.svg`}
+              src={asset(`${figure.src}-dark.svg`)}
               alt=""
               aria-hidden
               className="absolute inset-0 hidden h-full w-full p-3 sm:p-4 dark:block"

@@ -4,6 +4,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const OUT = "out";
+const BASE = process.env.BASE_PATH ?? "";
 const routes = [
   ["projects", "/work/"],
   ["legal-index", "/governance/"],
@@ -15,10 +16,10 @@ for (const [from, to] of routes) {
   writeFileSync(
     join(dir, "index.html"),
     `<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=${to}">
-<link rel="canonical" href="${to}">
+<meta http-equiv="refresh" content="0; url=${BASE}${to}">
+<link rel="canonical" href="${BASE}${to}">
 <title>Moved</title></head>
-<body><p>This page moved to <a href="${to}">${to}</a>.</p></body></html>\n`,
+<body><p>This page moved to <a href="${BASE}${to}">${to}</a>.</p></body></html>\n`,
   );
   console.log(`  /${from === "legal-index" ? "legal" : from}/ -> ${to}`);
 }

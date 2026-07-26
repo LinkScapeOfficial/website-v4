@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import Spotlight from "@/components/animations/spotlight";
 import { Chip, type ChipTone } from "@/components/ui/chip";
 import { cn } from "@/lib/utils";
+import { asset } from "@/lib/asset";
 import type { WorkItem, WorkType } from "@/content/work";
 
 const TYPE_TONE: Record<WorkType, ChipTone> = {
@@ -59,13 +60,13 @@ export default function WorkCard({
           <div className="surface relative mb-5 aspect-[16/9] w-full overflow-hidden rounded-lg border border-border">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${diagram.src}-light.svg`}
+              src={asset(`${diagram.src}-light.svg`)}
               alt=""
               className="absolute inset-0 h-full w-full object-contain p-3 dark:hidden"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${diagram.src}-dark.svg`}
+              src={asset(`${diagram.src}-dark.svg`)}
               alt=""
               className="absolute inset-0 hidden h-full w-full object-contain p-3 dark:block"
             />

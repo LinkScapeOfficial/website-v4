@@ -11,6 +11,7 @@ import { Chip } from "@/components/ui/chip";
 import { Button } from "@/components/ui/button";
 import { allDocs, getDoc } from "@/lib/governance";
 import { site } from "@/content/site";
+import { asset } from "@/lib/asset";
 
 export function generateStaticParams() {
   return allDocs().map((d) => ({ id: d.id.toLowerCase() }));
@@ -67,7 +68,7 @@ export default async function GovernanceDoc({
             </Chip>
           ) : null}
           <Button asChild variant="outline" size="sm" className="rounded-full">
-            <a href={`/governance/${doc.id}.pdf`}>
+            <a href={asset(`/governance/${doc.id}.pdf`)}>
               <Download className="mr-2 h-3.5 w-3.5" />
               Download PDF
             </a>
