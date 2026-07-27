@@ -80,14 +80,17 @@ export default async function WorkDetail({
 
       {item.notice ? (
         <Section>
-          <div className="flex items-start gap-3 border-b border-border bg-gh-yellow-0/50 px-4 py-5 dark:bg-gh-yellow-5/10 sm:px-6">
+          <div className="flex items-start gap-3 border-b border-border bg-muted/50 px-4 py-5 sm:px-6">
             <AlertTriangle
-              className="mt-0.5 h-4 w-4 shrink-0 text-gh-yellow-5"
+              className="mt-0.5 h-4 w-4 shrink-0 text-foreground"
               strokeWidth={2}
             />
-            <p className="text-sm leading-relaxed text-foreground/85">
-              {item.notice}
-            </p>
+            <div>
+              <p className="mono-label">Notice</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-foreground">
+                {item.notice}
+              </p>
+            </div>
           </div>
         </Section>
       ) : null}

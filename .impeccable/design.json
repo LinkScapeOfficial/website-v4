@@ -8,101 +8,291 @@
         "role": "primary",
         "displayName": "Signal Blue",
         "canonical": "#0969da",
-        "tonalRamp": ["#002155", "#0a3069", "#033d8b", "#0550ae", "#0969da", "#218bff", "#54aeff", "#80ccff"]
+        "tonalRamp": [
+          "#002155",
+          "#0a3069",
+          "#033d8b",
+          "#0550ae",
+          "#0969da",
+          "#218bff",
+          "#54aeff",
+          "#80ccff"
+        ]
       },
       "signal-blue-hairline": {
         "role": "primary",
         "displayName": "Signal Blue Hairline",
         "canonical": "#80ccff",
-        "tonalRamp": ["#0a3069", "#033d8b", "#0550ae", "#0969da", "#218bff", "#54aeff", "#80ccff", "#b6e3ff"]
+        "tonalRamp": [
+          "#0a3069",
+          "#033d8b",
+          "#0550ae",
+          "#0969da",
+          "#218bff",
+          "#54aeff",
+          "#80ccff",
+          "#b6e3ff"
+        ]
       },
       "signal-blue-edge": {
         "role": "primary",
         "displayName": "Signal Blue Edge",
         "canonical": "#218bff",
-        "tonalRamp": ["#002155", "#0a3069", "#0550ae", "#0969da", "#218bff", "#54aeff", "#80ccff", "#b6e3ff"]
+        "tonalRamp": [
+          "#002155",
+          "#0a3069",
+          "#0550ae",
+          "#0969da",
+          "#218bff",
+          "#54aeff",
+          "#80ccff",
+          "#b6e3ff"
+        ]
       },
       "signal-blue-wash": {
         "role": "primary",
         "displayName": "Signal Blue Wash",
         "canonical": "#ddf4ff",
-        "tonalRamp": ["#0550ae", "#0969da", "#218bff", "#54aeff", "#80ccff", "#b6e3ff", "#ddf4ff", "#f2fbff"]
+        "tonalRamp": [
+          "#0550ae",
+          "#0969da",
+          "#218bff",
+          "#54aeff",
+          "#80ccff",
+          "#b6e3ff",
+          "#ddf4ff",
+          "#f2fbff"
+        ]
       },
       "ink": {
         "role": "neutral",
         "displayName": "Ink",
         "canonical": "hsl(240 10% 3.9%)",
-        "tonalRamp": ["#09090b", "#18181b", "#27272a", "#3f3f46", "#71717a", "#a1a1aa", "#e4e4e7", "#fafafa"]
+        "tonalRamp": [
+          "#09090b",
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#71717a",
+          "#a1a1aa",
+          "#e4e4e7",
+          "#fafafa"
+        ]
       },
       "paper": {
         "role": "neutral",
         "displayName": "Paper",
         "canonical": "hsl(0 0% 98%)",
-        "tonalRamp": ["#09090b", "#18181b", "#27272a", "#52525b", "#a1a1aa", "#e4e4e7", "#f4f4f5", "#ffffff"]
+        "tonalRamp": [
+          "#09090b",
+          "#18181b",
+          "#27272a",
+          "#52525b",
+          "#a1a1aa",
+          "#e4e4e7",
+          "#f4f4f5",
+          "#ffffff"
+        ]
       },
       "surface": {
         "role": "neutral",
         "displayName": "Surface",
         "canonical": "hsl(0 0% 100%)",
-        "tonalRamp": ["#0b0b0d", "#18181b", "#27272a", "#52525b", "#a1a1aa", "#e4e4e7", "#fafafa", "#ffffff"]
+        "tonalRamp": [
+          "#0b0b0d",
+          "#18181b",
+          "#27272a",
+          "#52525b",
+          "#a1a1aa",
+          "#e4e4e7",
+          "#fafafa",
+          "#ffffff"
+        ]
       },
       "rule": {
         "role": "neutral",
         "displayName": "Rule",
         "canonical": "hsl(240 5.9% 90%)",
-        "tonalRamp": ["#18181b", "#27272a", "#3f3f46", "#52525b", "#a1a1aa", "#d4d4d8", "#e4e4e7", "#f4f4f5"]
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525b",
+          "#a1a1aa",
+          "#d4d4d8",
+          "#e4e4e7",
+          "#f4f4f5"
+        ]
       },
       "muted-ink": {
         "role": "neutral",
         "displayName": "Muted Ink",
         "canonical": "hsl(240 3.8% 46.1%)",
-        "tonalRamp": ["#18181b", "#27272a", "#3f3f46", "#52525b", "#71717a", "#a1a1aa", "#d4d4d8", "#f4f4f5"]
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525b",
+          "#71717a",
+          "#a1a1aa",
+          "#d4d4d8",
+          "#f4f4f5"
+        ]
       },
       "muted-surface": {
         "role": "neutral",
         "displayName": "Muted Surface",
         "canonical": "hsl(240 4.8% 95.9%)",
-        "tonalRamp": ["#18181b", "#27272a", "#3f3f46", "#71717a", "#a1a1aa", "#d4d4d8", "#f4f4f5", "#fafafa"]
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#71717a",
+          "#a1a1aa",
+          "#d4d4d8",
+          "#f4f4f5",
+          "#fafafa"
+        ]
       },
       "hover-wash": {
         "role": "neutral",
         "displayName": "Hover Wash",
         "canonical": "hsl(210 20% 98%)",
-        "tonalRamp": ["#18181b", "#27272a", "#3f3f46", "#71717a", "#a1a1aa", "#e5e7eb", "#f3f4f6", "#f9fafb"]
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#71717a",
+          "#a1a1aa",
+          "#e5e7eb",
+          "#f3f4f6",
+          "#f9fafb"
+        ]
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Page titles. One per route, solid ink, never gradient-filled." },
-      "headline": { "displayName": "Headline", "purpose": "Section titles inside the lattice, always paired with a bottom rule." },
-      "title": { "displayName": "Title", "purpose": "Cell and card headings." },
-      "body": { "displayName": "Body", "purpose": "Ledes and section copy in the site chrome, held to 65 to 75 characters." },
-      "prose": { "displayName": "Prose", "purpose": "The 15px long-form reading size at 1.75 leading, for governance documents and work write-ups." },
-      "supporting": { "displayName": "Supporting", "purpose": "Captions, cell descriptions, navigation, and inline links. The Geist Sans floor of the ramp." },
-      "readout": { "displayName": "Readout", "purpose": "Statistics and headline numbers in Geist Mono with tabular figures." },
-      "label": { "displayName": "Label", "purpose": "Eyebrows, dates, identifiers, and stack tags. The panel's engraving." },
-      "meta": { "displayName": "Meta", "purpose": "The monospaced value under an engraved label; also figure captions and document tables." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page titles. One per route, solid ink, never gradient-filled."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles inside the lattice, always paired with a bottom rule."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Cell and card headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Ledes and section copy in the site chrome, held to 65 to 75 characters."
+      },
+      "prose": {
+        "displayName": "Prose",
+        "purpose": "The 15px long-form reading size at 1.75 leading, for governance documents and work write-ups."
+      },
+      "supporting": {
+        "displayName": "Supporting",
+        "purpose": "Captions, cell descriptions, navigation, and inline links. The Geist Sans floor of the ramp."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "Statistics and headline numbers in Geist Mono with tabular figures."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Eyebrows, dates, identifiers, and stack tags. The panel's engraving."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "The monospaced value under an engraved label; also figure captions and document tables."
+      }
     },
     "shadows": [],
     "motion": [
-      { "name": "ease-instrument", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The system's only easing curve, expo-out. New motion changes duration, not curve." },
-      { "name": "duration-filter", "value": "240ms", "purpose": "Work filter transitions." },
-      { "name": "duration-row", "value": "350ms", "purpose": "Document register table row entrance." },
-      { "name": "duration-entrance", "value": "400ms", "purpose": "BlurFade default entrance for heroes and figures." },
-      { "name": "duration-sweep", "value": "1000ms", "purpose": "RevealLine hairline sweep under a section header, drawn in ink rather than blue." },
-      { "name": "duration-hero-rules", "value": "1200ms", "purpose": "HeroRules settling from scaleX 1.06 to 1 with opacity on mount." },
-      { "name": "duration-count", "value": "1500ms", "purpose": "Statistic count-up, decoration over an already-correct value." },
-      { "name": "duration-state", "value": "200ms", "purpose": "Colour and background state transitions on rows, links, and controls." },
-      { "name": "duration-chrome", "value": "300ms", "purpose": "Header transition between transparent and blurred states." },
-      { "name": "duration-media", "value": "500ms", "purpose": "Image scale on card hover." },
-      { "name": "duration-theme", "value": "220ms", "purpose": "Theme toggle, the one ease-out exception to the single-curve rule." },
-      { "name": "spring-nav", "value": "type: spring, stiffness: 380, damping: 32", "purpose": "Active navigation underline travelling between routes. Collapses to zero duration under reduced motion." },
-      { "name": "marquee", "value": "42s linear infinite", "purpose": "Partner strip translation. Disabled entirely under reduced motion." }
+      {
+        "name": "ease-instrument",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The system's only easing curve, expo-out. New motion changes duration, not curve."
+      },
+      {
+        "name": "duration-filter",
+        "value": "240ms",
+        "purpose": "Work filter transitions."
+      },
+      {
+        "name": "duration-row",
+        "value": "350ms",
+        "purpose": "Document register table row entrance."
+      },
+      {
+        "name": "duration-entrance",
+        "value": "400ms",
+        "purpose": "BlurFade default entrance for heroes and figures."
+      },
+      {
+        "name": "duration-sweep",
+        "value": "1000ms",
+        "purpose": "RevealLine hairline sweep under a section header, drawn in ink rather than blue."
+      },
+      {
+        "name": "duration-hero-rules",
+        "value": "1200ms",
+        "purpose": "HeroRules settling from scaleX 1.06 to 1 with opacity on mount."
+      },
+      {
+        "name": "duration-count",
+        "value": "1500ms",
+        "purpose": "Statistic count-up, decoration over an already-correct value."
+      },
+      {
+        "name": "duration-state",
+        "value": "200ms",
+        "purpose": "Colour and background state transitions on rows, links, and controls."
+      },
+      {
+        "name": "duration-chrome",
+        "value": "300ms",
+        "purpose": "Header transition between transparent and blurred states."
+      },
+      {
+        "name": "duration-media",
+        "value": "500ms",
+        "purpose": "Image scale on card hover."
+      },
+      {
+        "name": "duration-theme",
+        "value": "220ms",
+        "purpose": "Theme toggle, the one ease-out exception to the single-curve rule."
+      },
+      {
+        "name": "spring-nav",
+        "value": "type: spring, stiffness: 380, damping: 32",
+        "purpose": "Active navigation underline travelling between routes. Collapses to zero duration under reduced motion."
+      },
+      {
+        "name": "marquee",
+        "value": "42s linear infinite",
+        "purpose": "Partner strip translation. Disabled entirely under reduced motion."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" },
-      { "name": "container", "value": "1152px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "container",
+        "value": "1152px"
+      }
     ]
   },
   "components": [
@@ -183,8 +373,8 @@
       "kind": "custom",
       "refersTo": null,
       "description": "The signature component and the thesis of the system. Vertical hairlines at quarter pitch, inset to the container gutters so they land on the lattice's cell divisions below, masked to strengthen downward and settling from scaleX 1.06 on arrival.",
-      "html": "<div class=\"ds-hero\"><div class=\"ds-hero-rules\" aria-hidden=\"true\"></div><div class=\"ds-hero-body\"><p class=\"ds-hero-eyebrow\">Founded 2023</p><h1 class=\"ds-hero-title\">A student AI research organization</h1></div></div>",
-      "css": ".ds-hero { position: relative; overflow: hidden; padding: 0 16px; background: var(--ds-paper, #fafafa); } .ds-hero-rules { position: absolute; top: 0; bottom: 0; left: 16px; right: 16px; pointer-events: none; background-image: linear-gradient(to right, var(--ds-rule, #e4e4e7) 1px, transparent 1px); background-size: 25% 100%; mask-image: linear-gradient(to bottom, transparent, hsl(0 0% 0%) 92%); -webkit-mask-image: linear-gradient(to bottom, transparent, hsl(0 0% 0%) 92%); animation: ds-hero-settle 1200ms cubic-bezier(0.16, 1, 0.3, 1) both; } @keyframes ds-hero-settle { from { opacity: 0; transform: scaleX(1.06); } to { opacity: 1; transform: scaleX(1); } } .ds-hero-body { position: relative; padding: 96px 16px 64px; border-left: 1px solid var(--ds-rule, #e4e4e7); border-right: 1px solid var(--ds-rule, #e4e4e7); } .ds-hero-eyebrow { margin: 0 0 16px; font-family: var(--font-geist-mono), ui-monospace, Menlo, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ds-muted-ink, #71717a); } .ds-hero-title { margin: 0; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: clamp(2.25rem, 5vw, 3rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.025em; color: var(--ds-ink, #09090b); }"
+      "html": "<div class=\"ds-hero\" style=\"--hero-columns:4\"><div class=\"ds-hero-rules\" aria-hidden=\"true\"></div><div class=\"ds-hero-body\"><p class=\"ds-hero-eyebrow\">Founded 2023</p><h1 class=\"ds-hero-title\">A student AI research organization</h1></div></div>",
+      "css": ".ds-hero { position: relative; overflow: hidden; padding: 0 16px; background: var(--ds-paper, #fafafa); } .ds-hero-rules { position: absolute; top: 0; bottom: 0; left: 16px; right: 16px; pointer-events: none; background-image: linear-gradient(to right, var(--ds-rule, #e4e4e7) 1px, transparent 1px); background-size: calc(100% / var(--hero-columns, 3)) 100%; mask-image: linear-gradient(to bottom, transparent, hsl(0 0% 0%) 92%); -webkit-mask-image: linear-gradient(to bottom, transparent, hsl(0 0% 0%) 92%); animation: ds-hero-settle 1200ms cubic-bezier(0.16, 1, 0.3, 1) both; } @keyframes ds-hero-settle { from { opacity: 0; transform: scaleX(1.06); } to { opacity: 1; transform: scaleX(1); } } .ds-hero-body { position: relative; padding: 96px 16px 64px; border-left: 1px solid var(--ds-rule, #e4e4e7); border-right: 1px solid var(--ds-rule, #e4e4e7); } .ds-hero-eyebrow { margin: 0 0 16px; font-family: var(--font-geist-mono), ui-monospace, Menlo, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ds-muted-ink, #71717a); } .ds-hero-title { margin: 0; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: clamp(2.25rem, 5vw, 3rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.025em; color: var(--ds-ink, #09090b); }"
     },
     {
       "name": "Statistic Readout",
@@ -231,23 +421,91 @@
       "The page must be readable and navigable with JavaScript disabled."
     ],
     "rules": [
-      { "name": "The One Accent Rule", "body": "Signal Blue is the system's only chromatic color, and it means \"you can act on this.\" A chip, a tag, a category, or a heading never earns color. If something needs to be distinguished and it is not actionable, distinguish it with a rule, a monospace label, or position.", "section": "colors" },
-      { "name": "The Two Value Rule", "body": "Light and dark are separately authored, not algorithmically inverted. Every new color must be specified in both, and a design is not finished until it has been read in both.", "section": "colors" },
-      { "name": "The Rule Carries Structure", "body": "Before reaching for a background, a shadow, or a radius to separate two things, use a one-pixel border in Rule. That is the house style and it is almost always sufficient.", "section": "colors" },
-      { "name": "The Stencil Is Not A Color Rule", "body": "A value that exists only to make a mask opaque does not enter the palette, does not get a dark variant, and does not get reused as a fill. If it ever paints a pixel the visitor can see, it has become a color and must be justified as one.", "section": "colors" },
-      { "name": "The Engraved Label Rule", "body": "Anything that names, dates, categorizes, or identifies is set in Geist Mono, uppercase, at 11px with 0.14em tracking. Anything that argues or explains is set in Geist Sans. A visitor can tell fact from framing by typeface alone.", "section": "typography" },
-      { "name": "The Measured Eyebrow Rule", "body": "An eyebrow carries a count, a date, a status, or an identifier: \"12 projects\", \"Founded 2023\", \"4 published · 11 registered\". It never paraphrases the heading beneath it. If the only eyebrow you can write restates the section title, delete it. The engraved label is instrumentation, and a decorative caption set in that typeface turns the whole panel into a costume.", "section": "typography" },
-      { "name": "The Solid Heading Rule", "body": "Headings are one solid color. No gradient fill, no background-clip: text, no per-word tinting. A heading that needs a gradient to be interesting is a heading with nothing to say.", "section": "typography" },
-      { "name": "The Tabular Number Rule", "body": "Every figure a reader might compare or scan is monospaced with tabular figures. Numbers in running prose are exempt.", "section": "typography" },
-      { "name": "The Continuous Rule Rule", "body": "The two vertical container borders never break between sections. If a new section cannot draw them, it belongs inside an existing one.", "section": "layout" },
-      { "name": "The Flush Grid Rule", "body": "Grid cells clip their trailing borders against an overflow-hidden parent. Never hand-remove borders from the last item in a row; the column count changes at every breakpoint and the hand-removal will be wrong.", "section": "layout" },
-      { "name": "The Quarter Pitch Rule", "body": "Any full-bleed ruling laid behind content is inset to the container's own gutters and pitched so its lines fall on the lattice's cell divisions. A field that does not land on the grid is decoration, and decoration behind content is the thing this system exists to refuse.", "section": "layout" },
-      { "name": "The Flat Rule", "body": "Surfaces are flat at rest, flat on hover, and flat on press. There are no permitted shadows in the page body: not on a button, not on a card, not on a cell, not on a chip, not on a hero. A new box-shadow is a defect, and the correct fix is a rule or a tonal step.", "section": "elevation" },
-      { "name": "The No Atmosphere Rule", "body": "Depth is never suggested by light. No radial glow, no bloom, no vignette, no gradient fading into the page floor. If a region needs to feel separate, give it a border and a surface value.", "section": "elevation" },
-      { "name": "The Two File Figure Rule", "body": "Any generated graphic ships as a light and a dark variant. A single graphic that \"works on both\" is a graphic that is wrong on one.", "section": "components" },
-      { "name": "The No Placeholder Number Rule", "body": "An unsubstantiated figure is stated as absent in words. It is never zero, never an approximation, and never a dash.", "section": "components" },
-      { "name": "The One Ease Rule", "body": "Every transition in the system uses expo-out cubic-bezier(0.16, 1, 0.3, 1). New motion changes duration, not curve.", "section": "components" },
-      { "name": "The Reading Is Not An Entrance Rule", "body": "Continuous prose is never staggered. Animate the frame, the figure, and the rule; never the sentence the reader is trying to get to.", "section": "components" }
+      {
+        "name": "The One Accent Rule",
+        "body": "Signal Blue is the system's only chromatic color, and it means \"you can act on this.\" A chip, a tag, a category, or a heading never earns color. If something needs to be distinguished and it is not actionable, distinguish it with a rule, a monospace label, or position.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Value Rule",
+        "body": "Light and dark are separately authored, not algorithmically inverted. Every new color must be specified in both, and a design is not finished until it has been read in both.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rule Carries Structure",
+        "body": "Before reaching for a background, a shadow, or a radius to separate two things, use a one-pixel border in Rule. That is the house style and it is almost always sufficient.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stencil Is Not A Color Rule",
+        "body": "A value that exists only to make a mask opaque does not enter the palette, does not get a dark variant, and does not get reused as a fill. If it ever paints a pixel the visitor can see, it has become a color and must be justified as one.",
+        "section": "colors"
+      },
+      {
+        "name": "The Engraved Label Rule",
+        "body": "Anything that names, dates, categorizes, or identifies is set in Geist Mono, uppercase, at 11px with 0.14em tracking. Anything that argues or explains is set in Geist Sans. A visitor can tell fact from framing by typeface alone.",
+        "section": "typography"
+      },
+      {
+        "name": "The Measured Eyebrow Rule",
+        "body": "An eyebrow carries a count, a date, a status, or an identifier: \"12 projects\", \"Founded 2023\", \"4 published \u00b7 11 registered\". It never paraphrases the heading beneath it. If the only eyebrow you can write restates the section title, delete it. The engraved label is instrumentation, and a decorative caption set in that typeface turns the whole panel into a costume.",
+        "section": "typography"
+      },
+      {
+        "name": "The Solid Heading Rule",
+        "body": "Headings are one solid color. No gradient fill, no background-clip: text, no per-word tinting. A heading that needs a gradient to be interesting is a heading with nothing to say.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Number Rule",
+        "body": "Every figure a reader might compare or scan is monospaced with tabular figures. Numbers in running prose are exempt.",
+        "section": "typography"
+      },
+      {
+        "name": "The Continuous Rule Rule",
+        "body": "The two vertical container borders never break between sections. If a new section cannot draw them, it belongs inside an existing one.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flush Grid Rule",
+        "body": "Grid cells clip their trailing borders against an overflow-hidden parent. Never hand-remove borders from the last item in a row; the column count changes at every breakpoint and the hand-removal will be wrong.",
+        "section": "layout"
+      },
+      {
+        "name": "The Matched Pitch Rule",
+        "body": "Any full-bleed ruling laid behind content is inset to the container's own gutters and pitched to the column count of the band directly below it, so its lines fall on real cell divisions. A field that does not land on the grid is decoration, and decoration behind content is the thing this system exists to refuse.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Rule",
+        "body": "Surfaces are flat at rest, flat on hover, and flat on press. There are no permitted shadows in the page body: not on a button, not on a card, not on a cell, not on a chip, not on a hero. A new box-shadow is a defect, and the correct fix is a rule or a tonal step.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No Atmosphere Rule",
+        "body": "Depth is never suggested by light. No radial glow, no bloom, no vignette, no gradient fading into the page floor. If a region needs to feel separate, give it a border and a surface value.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Two File Figure Rule",
+        "body": "Any generated graphic ships as a light and a dark variant. A single graphic that \"works on both\" is a graphic that is wrong on one.",
+        "section": "components"
+      },
+      {
+        "name": "The No Placeholder Number Rule",
+        "body": "An unsubstantiated figure is stated as absent in words. It is never zero, never an approximation, and never a dash.",
+        "section": "components"
+      },
+      {
+        "name": "The One Ease Rule",
+        "body": "Every transition in the system uses expo-out cubic-bezier(0.16, 1, 0.3, 1). New motion changes duration, not curve.",
+        "section": "components"
+      },
+      {
+        "name": "The Reading Is Not An Entrance Rule",
+        "body": "Continuous prose is never staggered. Animate the frame, the figure, and the rule; never the sentence the reader is trying to get to.",
+        "section": "components"
+      }
     ],
     "dos": [
       "Do separate content with a one-pixel solid border in Rule before considering a background, radius, or shadow.",

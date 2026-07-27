@@ -386,7 +386,7 @@ sections. If a new section cannot draw them, it belongs inside an existing one.
 overflow-hidden parent. Never hand-remove borders from the last item in a row; the
 column count changes at every breakpoint and the hand-removal will be wrong.
 
-**The Quarter Pitch Rule.** Any full-bleed ruling laid behind content is inset to the
+**The Matched Pitch Rule.** Any full-bleed ruling laid behind content is inset to the
 container's own gutters and pitched so its lines fall on the lattice's cell
 divisions. A field that does not land on the grid is decoration, and decoration
 behind content is the thing this system exists to refuse.
@@ -532,10 +532,8 @@ Donate, Governance, and Team, two on Join. Each line therefore falls exactly whe
 that band draws a cell division. The hero is not decorated with a background field;
 it is ruled by the same grid that carries the content, extended upward.
 
-**The Matched Pitch Rule.** A hero's ruling must be pitched to the band below it. A
-hero whose pitch matches nothing is a decorative background field, which is the thing
-this component replaced, and passing the wrong `columns` value silently converts one
-into the other.
+Passing the wrong `columns` value silently converts this component back into the
+decorative field it replaced. See **The Matched Pitch Rule** under Layout.
 
 It is masked with a downward-strengthening linear gradient, transparent at the top and
 fully opaque by 92 percent of the height, so the rules resolve into the body they
