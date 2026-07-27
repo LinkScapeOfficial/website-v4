@@ -22,6 +22,7 @@ export default function Team() {
   return (
     <>
       <PageHero
+        columns={3}
         eyebrow={`${people.length} people`}
         title="Team"
         lede="Three officers, three members, three fellows. Every officer publishes their own address."
@@ -58,7 +59,7 @@ export default function Team() {
                         alt={person.name}
                         width={120}
                         height={120}
-                        className="h-20 w-20 shrink-0 rounded-xl bg-muted object-cover sm:h-24 sm:w-24"
+                        className="h-20 w-20 shrink-0 rounded-lg bg-muted object-cover sm:h-24 sm:w-24"
                       />
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-3">
@@ -66,7 +67,7 @@ export default function Team() {
                             {person.name}
                           </h3>
                           {person.term ? (
-                            <Chip tone="neutral" mono>
+                            <Chip mono>
                               {person.term}
                             </Chip>
                           ) : null}
@@ -124,7 +125,7 @@ export default function Team() {
                         alt={person.name}
                         width={96}
                         height={96}
-                        className="h-16 w-16 rounded-xl bg-muted object-cover"
+                        className="h-16 w-16 rounded-lg bg-muted object-cover"
                       />
                       <div className="flex-1">
                         <p className="font-semibold tracking-tight">

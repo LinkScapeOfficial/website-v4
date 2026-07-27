@@ -8,6 +8,7 @@ import { Section } from "@/components/layout/section";
 import DocBody from "@/components/doc-body";
 import { DocContents, ReadingProgress } from "@/components/doc-contents";
 import { Chip } from "@/components/ui/chip";
+import { FactRow } from "@/components/ui/fact-row";
 import { Button } from "@/components/ui/button";
 import { allDocs, getDoc } from "@/lib/governance";
 import { site } from "@/content/site";
@@ -59,11 +60,16 @@ export default async function GovernanceDoc({
     <>
       <ReadingProgress />
 
-      <PageHero eyebrow={`${doc.domain} · ${doc.id}`} title={doc.title} lede={doc.summary}>
+      <PageHero
+        columns={4}
+        eyebrow={`${doc.domain} · ${doc.id}`}
+        title={doc.title}
+        lede={doc.summary}
+      >
         <div className="mt-5 flex flex-wrap items-center gap-3">
-          <Chip tone="green">{doc.status}</Chip>
+          <Chip strong>{doc.status}</Chip>
           {doc.version ? (
-            <Chip tone="neutral" mono>
+            <Chip mono>
               v{doc.version}
             </Chip>
           ) : null}
@@ -91,15 +97,15 @@ export default async function GovernanceDoc({
                 only do for the final cell. */}
             <dl className="-mr-px grid grid-cols-2 overflow-hidden border-b border-border sm:grid-cols-3">
               {meta.map((row) => (
-                <div
+                <FactRow
                   key={row.k}
-                  className="border-b border-r border-border px-5 py-3.5"
-                >
-                  <dt className="mono-label">{row.k}</dt>
-                  <dd className="mt-1 font-mono text-[13px] font-medium">
-                    {row.v}
-                  </dd>
-                </div>
+                  label={row.k}
+                  value={row.v}
+                  definition
+                  mono
+                  density="compact"
+                  className="border-r"
+                />
               ))}
             </dl>
 

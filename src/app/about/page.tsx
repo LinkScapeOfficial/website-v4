@@ -12,6 +12,7 @@ import { LatticeGrid } from "@/components/layout/lattice";
 import Spotlight from "@/components/animations/spotlight";
 import BlurFade from "@/components/animations/blur-fade";
 import { Button } from "@/components/ui/button";
+import { FactList, FactRow } from "@/components/ui/fact-row";
 import { site, pillars, values } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -54,18 +55,19 @@ const milestones = [
 ];
 
 const facts = [
-  { k: "Founded", v: site.founded },
-  { k: "Structure", v: "Fiscally sponsored project" },
-  { k: "Fiscal sponsor", v: "Hack Club, 501(c)(3)" },
-  { k: "Team", v: "Three officers, three members, three fellows" },
-  { k: "Compute", v: "80× NVIDIA H100" },
-  { k: "Release default", v: "Open source" },
+  { k: "Founded", v: site.founded, mono: true },
+  { k: "Structure", v: "Fiscally sponsored project", mono: false },
+  { k: "Fiscal sponsor", v: "Hack Club, 501(c)(3)", mono: true },
+  { k: "Team", v: "3 officers, 3 members, 3 fellows", mono: true },
+  { k: "Compute", v: "80× NVIDIA H100", mono: true },
+  { k: "Release default", v: "Open source", mono: false },
 ];
 
 export default function About() {
   return (
     <>
       <PageHero
+        columns={3}
         eyebrow={`Founded ${site.founded}`}
         title="About"
         lede="A youth-led AI nonprofit, run by students, backed by Hack Club, and governed by documents you can read on this site."
@@ -79,7 +81,7 @@ export default function About() {
               <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
                 Talent is everywhere. Compute is not.
               </h2>
-              <div className="mt-6 space-y-5 text-[15.5px] leading-[1.75] text-foreground/85">
+              <div className="mt-6 space-y-5 text-[15px] leading-[1.75] text-foreground/85">
                 <p>
                   Plenty of teenagers could do serious AI work. Almost none of
                   them can finish a training run on a school laptop, and almost
@@ -107,22 +109,16 @@ export default function About() {
             </BlurFade>
           </div>
 
-          <aside className="flex flex-col">
+          <FactList as="aside">
             {facts.map((row) => (
-              <div key={row.k} className="border-b border-border px-8 py-5">
-                <p className="mono-label">{row.k}</p>
-                <p className="mt-1.5 text-sm font-medium tracking-tight">
-                  {row.v}
-                </p>
-              </div>
+              <FactRow key={row.k} label={row.k} value={row.v} mono={row.mono} />
             ))}
-          </aside>
+          </FactList>
         </div>
       </Section>
 
       <Section topBorder={false}>
         <SectionHeader
-          eyebrow="Mission"
           title="Three pillars"
           lede="Build in the open, train the next people, keep the room going."
           action={
@@ -158,7 +154,7 @@ export default function About() {
 
       <Section topBorder={false}>
         <SectionHeader
-          eyebrow="Values"
+          eyebrow={`${values.length} commitments`}
           title="Five commitments, not five adjectives"
           lede="Each one commits us to a specific behaviour. They exist to settle arguments."
         />
@@ -194,7 +190,10 @@ export default function About() {
       <LatticeSpacer />
 
       <Section topBorder={false}>
-        <SectionHeader eyebrow="History" title="How we got here" />
+        <SectionHeader
+          eyebrow={`${milestones.length} entries · ${site.founded} to now`}
+          title="How we got here"
+        />
         <ol className="flex flex-col">
           {milestones.map((m) => (
             <li
@@ -221,7 +220,6 @@ export default function About() {
 
       <Section topBorder={false}>
         <SectionHeader
-          eyebrow="Structure"
           title="How LinkScape is legally constituted"
           lede="The exact arrangement, in plain terms."
         />
@@ -252,19 +250,16 @@ export default function About() {
               </Link>
             </Button>
           </div>
-          <div className="flex flex-col">
+          <FactList>
             {[
-              { k: "Charitable status held by", v: "Hack Club, 501(c)(3)" },
-              { k: "Receipts issued by", v: "Hack Club Bank" },
-              { k: "Audited by", v: "Hack Club, alongside its other programs" },
-              { k: "LinkScape's legal form", v: "A sponsored program" },
+              { k: "Charitable status held by", v: "Hack Club, 501(c)(3)", mono: true },
+              { k: "Receipts issued by", v: "Hack Club Bank", mono: true },
+              { k: "Audited by", v: "Hack Club, alongside its other programs", mono: false },
+              { k: "LinkScape's legal form", v: "A sponsored program", mono: false },
             ].map((row) => (
-              <div key={row.k} className="border-b border-border px-8 py-5">
-                <p className="mono-label">{row.k}</p>
-                <p className="mt-1.5 text-sm leading-relaxed">{row.v}</p>
-              </div>
+              <FactRow key={row.k} label={row.k} value={row.v} mono={row.mono} />
             ))}
-          </div>
+          </FactList>
         </div>
       </Section>
 

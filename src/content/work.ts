@@ -12,6 +12,8 @@ export interface WorkLink {
 export interface WorkFact {
   label: string;
   value: string;
+  /** True when the value is a measurement, date, or identifier rather than prose. */
+  mono?: boolean;
 }
 
 export interface WorkFigure {
@@ -77,11 +79,11 @@ export const work: WorkItem[] = [
       },
     ],
     facts: [
-      { label: "Venue", value: "ACL Rolling Review 2027" },
+      { label: "Venue", value: "ACL Rolling Review 2027", mono: true },
       { label: "Status", value: "Submitted, decision pending" },
       { label: "Authors", value: "Liqian Yan and Thomas Sing-wing Wu, equal contribution" },
-      { label: "Training overhead", value: "About 5%" },
-      { label: "Backbone", value: "Unmodified BERT" },
+      { label: "Training overhead", value: "About 5%", mono: true },
+      { label: "Backbone", value: "Unmodified BERT", mono: true },
     ],
     figures: [
       {
@@ -147,9 +149,9 @@ export const work: WorkItem[] = [
       },
     ],
     facts: [
-      { label: "Signal pipeline", value: "7-stage CIM engine" },
-      { label: "EEG", value: "NeuroSky MindWave, 8 bands at 1 Hz" },
-      { label: "Library", value: "73 tracks at −14 LUFS" },
+      { label: "Signal pipeline", value: "7-stage CIM engine", mono: true },
+      { label: "EEG", value: "NeuroSky MindWave, 8 bands at 1 Hz", mono: true },
+      { label: "Library", value: "73 tracks at −14 LUFS", mono: true },
       { label: "Client", value: "Offline-capable PWA" },
     ],
     figures: [
@@ -200,7 +202,7 @@ export const work: WorkItem[] = [
     ],
     facts: [
       { label: "Platform", value: "Windows, with a browser add-on" },
-      { label: "Output", value: "MP4" },
+      { label: "Output", value: "MP4", mono: true },
       { label: "Licence", value: "Open source" },
     ],
     figures: [
@@ -247,8 +249,8 @@ export const work: WorkItem[] = [
       },
     ],
     facts: [
-      { label: "Platform", value: "macOS" },
-      { label: "Runtime", value: "Ollama" },
+      { label: "Platform", value: "macOS", mono: true },
+      { label: "Runtime", value: "Ollama", mono: true },
       { label: "Data leaving your Mac", value: "None" },
     ],
     figures: [
@@ -286,7 +288,7 @@ export const work: WorkItem[] = [
       },
     ],
     facts: [
-      { label: "Dates", value: "March 29 to 30, 2025" },
+      { label: "Dates", value: "March 29 to 30, 2025", mono: true },
       { label: "Location", value: "Caohejing, Xuhui District, Shanghai" },
       { label: "Open to", value: "Middle and high school students in Shanghai" },
       { label: "Founders", value: "Thomas Wu and Liqian (Eric) Yan" },

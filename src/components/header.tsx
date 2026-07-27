@@ -110,7 +110,7 @@ export default function Header() {
             <Button
               asChild
               size="sm"
-              className="ml-1.5 hidden rounded-full px-4 shadow-sm transition-transform hover:scale-[1.03] active:scale-95 sm:inline-flex"
+              className="ml-1.5 hidden rounded-full px-4 transition-transform hover:scale-[1.02] active:scale-[0.98] sm:inline-flex"
             >
               <Link href="/donate">
                 <Heart className="mr-1.5 h-3.5 w-3.5" />

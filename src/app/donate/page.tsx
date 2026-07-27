@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 
 import PageHero from "@/components/layout/page-hero";
 import { Section, SectionHeader } from "@/components/layout/section";
 import { LatticeGrid } from "@/components/layout/lattice";
 import Spotlight from "@/components/animations/spotlight";
+import { TextLink } from "@/components/ui/text-link";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -34,14 +34,14 @@ export default function Donate() {
   return (
     <>
       <PageHero
-        eyebrow="Support the work"
+        columns={3}
+        eyebrow="Tax-deductible · receipted by Hack Club"
         title="Donate"
         lede="Your donation puts a student in front of hardware they could never afford. Tax-deductible, receipted by Hack Club."
       />
 
       <Section>
         <SectionHeader
-          eyebrow="Where it goes"
           title="What your money actually pays for"
           lede="Nobody here draws a salary. All of it goes to programs."
         />
@@ -80,20 +80,8 @@ export default function Donate() {
               {site.fiscalSponsor.statement}
             </p>
             <div className="mt-3 flex flex-wrap gap-4 text-sm">
-              <Link
-                href="/governance/g-06"
-                className="inline-flex items-center gap-1 underline decoration-border underline-offset-4 hover:decoration-foreground"
-              >
-                Sponsorship summary
-                <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
-              <Link
-                href="/governance/f-04"
-                className="inline-flex items-center gap-1 underline decoration-border underline-offset-4 hover:decoration-foreground"
-              >
-                Fundraising guidelines
-                <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
+              <TextLink href="/governance/g-06">Sponsorship summary</TextLink>
+              <TextLink href="/governance/f-04">Fundraising guidelines</TextLink>
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { Section, SectionHeader } from "@/components/layout/section";
 import { LatticeGrid } from "@/components/layout/lattice";
 import Spotlight from "@/components/animations/spotlight";
 import { Button } from "@/components/ui/button";
+import { TextLink } from "@/components/ui/text-link";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -66,7 +67,8 @@ export default function Join() {
   return (
     <>
       <PageHero
-        eyebrow="Get involved"
+        columns={2}
+        eyebrow="Open worldwide · no prior ML required"
         title="Join us"
         lede="Four ways in. Three of them start today, without asking us first."
       >
@@ -92,7 +94,7 @@ export default function Join() {
 
       <Section>
         <SectionHeader
-          eyebrow="Four routes"
+          eyebrow={`${paths.length} routes`}
           title="How people usually arrive"
           lede="Most members arrived through more than one of these."
         />
@@ -107,13 +109,9 @@ export default function Join() {
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {p.body}
                 </p>
-                <Link
-                  href={p.action.href}
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
-                >
+                <TextLink href={p.action.href} className="mt-6">
                   {p.action.label}
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </Link>
+                </TextLink>
               </div>
             </Spotlight>
           ))}
@@ -122,7 +120,6 @@ export default function Join() {
 
       <Section topBorder={false}>
         <SectionHeader
-          eyebrow="Before you write to us"
           title="What we ask, and what we promise"
           lede="Four things, agreed up front."
         />

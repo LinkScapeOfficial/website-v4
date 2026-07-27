@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-27T00:00:00Z",
+  "title": "Design System: LinkScape",
+  "extensions": {
+    "colorMeta": {
+      "signal-blue": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "canonical": "#0969da",
+        "tonalRamp": ["#002155", "#0a3069", "#033d8b", "#0550ae", "#0969da", "#218bff", "#54aeff", "#80ccff"]
+      },
+      "signal-blue-hairline": {
+        "role": "primary",
+        "displayName": "Signal Blue Hairline",
+        "canonical": "#80ccff",
+        "tonalRamp": ["#0a3069", "#033d8b", "#0550ae", "#0969da", "#218bff", "#54aeff", "#80ccff", "#b6e3ff"]
+      },
+      "signal-blue-edge": {
+        "role": "primary",
+        "displayName": "Signal Blue Edge",
+        "canonical": "#218bff",
+        "tonalRamp": ["#002155", "#0a3069", "#0550ae", "#0969da", "#218bff", "#54aeff", "#80ccff", "#b6e3ff"]
+      },
+      "signal-blue-wash": {
+        "role": "primary",
+        "displayName": "Signal Blue Wash",
+        "canonical": "#ddf4ff",
+        "tonalRamp": ["#0550ae", "#0969da", "#218bff", "#54aeff", "#80ccff", "#b6e3ff", "#ddf4ff", "#f2fbff"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "hsl(240 10% 3.9%)",
+        "tonalRamp": ["#09090b", "#18181b", "#27272a", "#3f3f46", "#71717a", "#a1a1aa", "#e4e4e7", "#fafafa"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "hsl(0 0% 98%)",
+        "tonalRamp": ["#09090b", "#18181b", "#27272a", "#52525b", "#a1a1aa", "#e4e4e7", "#f4f4f5", "#ffffff"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "hsl(0 0% 100%)",
+        "tonalRamp": ["#0b0b0d", "#18181b", "#27272a", "#52525b", "#a1a1aa", "#e4e4e7", "#fafafa", "#ffffff"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "hsl(240 5.9% 90%)",
+        "tonalRamp": ["#18181b", "#27272a", "#3f3f46", "#52525b", "#a1a1aa", "#d4d4d8", "#e4e4e7", "#f4f4f5"]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "hsl(240 3.8% 46.1%)",
+        "tonalRamp": ["#18181b", "#27272a", "#3f3f46", "#52525b", "#71717a", "#a1a1aa", "#d4d4d8", "#f4f4f5"]
+      },
+      "muted-surface": {
+        "role": "neutral",
+        "displayName": "Muted Surface",
+        "canonical": "hsl(240 4.8% 95.9%)",
+        "tonalRamp": ["#18181b", "#27272a", "#3f3f46", "#71717a", "#a1a1aa", "#d4d4d8", "#f4f4f5", "#fafafa"]
+      },
+      "hover-wash": {
+        "role": "neutral",
+        "displayName": "Hover Wash",
+        "canonical": "hsl(210 20% 98%)",
+        "tonalRamp": ["#18181b", "#27272a", "#3f3f46", "#71717a", "#a1a1aa", "#e5e7eb", "#f3f4f6", "#f9fafb"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page titles. One per route, solid ink, never gradient-filled." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles inside the lattice, always paired with a bottom rule." },
+      "title": { "displayName": "Title", "purpose": "Cell and card headings." },
+      "body": { "displayName": "Body", "purpose": "Ledes and section copy in the site chrome, held to 65 to 75 characters." },
+      "prose": { "displayName": "Prose", "purpose": "The 15px long-form reading size at 1.75 leading, for governance documents and work write-ups." },
+      "supporting": { "displayName": "Supporting", "purpose": "Captions, cell descriptions, navigation, and inline links. The Geist Sans floor of the ramp." },
+      "readout": { "displayName": "Readout", "purpose": "Statistics and headline numbers in Geist Mono with tabular figures." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows, dates, identifiers, and stack tags. The panel's engraving." },
+      "meta": { "displayName": "Meta", "purpose": "The monospaced value under an engraved label; also figure captions and document tables." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-instrument", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The system's only easing curve, expo-out. New motion changes duration, not curve." },
+      { "name": "duration-filter", "value": "240ms", "purpose": "Work filter transitions." },
+      { "name": "duration-row", "value": "350ms", "purpose": "Document register table row entrance." },
+      { "name": "duration-entrance", "value": "400ms", "purpose": "BlurFade default entrance for heroes and figures." },
+      { "name": "duration-sweep", "value": "1000ms", "purpose": "RevealLine hairline sweep under a section header, drawn in ink rather than blue." },
+      { "name": "duration-hero-rules", "value": "1200ms", "purpose": "HeroRules settling from scaleX 1.06 to 1 with opacity on mount." },
+      { "name": "duration-count", "value": "1500ms", "purpose": "Statistic count-up, decoration over an already-correct value." },
+      { "name": "duration-state", "value": "200ms", "purpose": "Colour and background state transitions on rows, links, and controls." },
+      { "name": "duration-chrome", "value": "300ms", "purpose": "Header transition between transparent and blurred states." },
+      { "name": "duration-media", "value": "500ms", "purpose": "Image scale on card hover." },
+      { "name": "duration-theme", "value": "220ms", "purpose": "Theme toggle, the one ease-out exception to the single-curve rule." },
+      { "name": "spring-nav", "value": "type: spring, stiffness: 380, damping: 32", "purpose": "Active navigation underline travelling between routes. Collapses to zero duration under reduced motion." },
+      { "name": "marquee", "value": "42s linear infinite", "purpose": "Partner strip translation. Disabled entirely under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "container", "value": "1152px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The header's call to action. Pill, ink fill, and no shadow at any size.",
+      "html": "<button class=\"ds-btn-primary\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 21s-8-4.7-8-10.2A4.8 4.8 0 0 1 12 7a4.8 4.8 0 0 1 8 3.8C20 16.3 12 21 12 21z\"/></svg>Donate</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 16px; border: none; border-radius: 9999px; background: var(--ds-ink, #09090b); color: var(--ds-paper, #fafafa); font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: background 200ms, transform 200ms; } .ds-btn-primary svg { width: 14px; height: 14px; } .ds-btn-primary:hover { background: color-mix(in srgb, var(--ds-ink, #09090b) 90%, transparent); transform: scale(1.02); } .ds-btn-primary:active { transform: scale(0.98); } .ds-btn-primary:focus-visible { outline: 1px solid var(--ds-ink, #09090b); outline-offset: 2px; }"
+    },
+    {
+      "name": "Call To Action Button",
+      "kind": "button",
+      "refersTo": "button-primary-lg",
+      "description": "The 48px pill that leads a page. Same ink fill, larger target, still flat.",
+      "html": "<button class=\"ds-btn-cta\">Read the work</button>",
+      "css": ".ds-btn-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 24px; border: none; border-radius: 9999px; background: var(--ds-ink, #09090b); color: var(--ds-paper, #fafafa); font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 200ms, transform 200ms; } .ds-btn-cta:hover { background: color-mix(in srgb, var(--ds-ink, #09090b) 90%, transparent); transform: scale(1.02); } .ds-btn-cta:active { transform: scale(0.98); } .ds-btn-cta:focus-visible { outline: 1px solid var(--ds-ink, #09090b); outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "The secondary action beside a call to action. Rule border on paper, full pill, no shadow.",
+      "html": "<button class=\"ds-btn-outline\">Read the governance pack</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 24px; border: 1px solid var(--ds-rule, #e4e4e7); border-radius: 9999px; background: var(--ds-paper, #fafafa); color: var(--ds-ink, #09090b); font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 200ms, color 200ms, transform 200ms; } .ds-btn-outline:hover { background: var(--ds-muted-surface, #f4f4f5); transform: scale(1.02); } .ds-btn-outline:active { transform: scale(0.98); } .ds-btn-outline:focus-visible { outline: 1px solid var(--ds-ink, #09090b); outline-offset: 2px; }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip-default",
+      "description": "The neutral rendering, for a category or a type. Category is conveyed by the word, never by hue.",
+      "html": "<span class=\"ds-chip\">Research</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border: 1px solid var(--ds-rule, #e4e4e7); border-radius: 9999px; background: color-mix(in srgb, var(--ds-muted-surface, #f4f4f5) 60%, transparent); color: var(--ds-muted-ink, #71717a); font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 20px; }"
+    },
+    {
+      "name": "Chip Strong",
+      "kind": "chip",
+      "refersTo": "chip-strong",
+      "description": "The second and only other rendering. Full ink, reserved for a document or work status the reader must resolve first.",
+      "html": "<span class=\"ds-chip-strong\">Published</span>",
+      "css": ".ds-chip-strong { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border: 1px solid color-mix(in srgb, var(--ds-ink, #09090b) 15%, transparent); border-radius: 9999px; background: color-mix(in srgb, var(--ds-ink, #09090b) 6%, transparent); color: var(--ds-ink, #09090b); font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 20px; }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "A stack or tooling identifier. Square because it sits inside the lattice, where chips float above it.",
+      "html": "<div class=\"ds-tag-row\"><span class=\"ds-tag\">PyTorch</span><span class=\"ds-tag\">vLLM</span><span class=\"ds-tag\">Modal</span></div>",
+      "css": ".ds-tag-row { display: flex; flex-wrap: wrap; gap: 6px; } .ds-tag { display: inline-block; padding: 2px 6px; border: 1px solid var(--ds-rule, #e4e4e7); border-radius: 4px; color: var(--ds-muted-ink, #71717a); font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; line-height: 20px; }"
+    },
+    {
+      "name": "Fact Row",
+      "kind": "custom",
+      "refersTo": "fact-row",
+      "description": "An engraved label above one value, closed by a bottom rule. The unit of every metadata rail; FactList stacks them and takes an `as` prop so a real definition list renders dl/dt/dd.",
+      "html": "<div class=\"ds-fact-list\"><div class=\"ds-fact-row\"><p class=\"ds-fact-label\">Effective</p><p class=\"ds-fact-value ds-fact-value-mono\">2026-04-18</p></div><div class=\"ds-fact-row\"><p class=\"ds-fact-label\">Owner</p><p class=\"ds-fact-value\">Research Council</p></div></div>",
+      "css": ".ds-fact-list { display: flex; flex-direction: column; } .ds-fact-row { padding: 20px 24px; border-bottom: 1px solid var(--ds-rule, #e4e4e7); } .ds-fact-row-compact { padding: 14px 20px; } .ds-fact-label { margin: 0; font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ds-muted-ink, #71717a); } .ds-fact-value { margin: 6px 0 0; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.625; color: var(--ds-ink, #09090b); } .ds-fact-value-mono { font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; letter-spacing: normal; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "An inline destination in the site chrome. The underline gains ink weight on hover rather than changing colour, which is why it does not spend the accent.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">Sponsorship summary<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
+      "css": ".ds-text-link { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; color: var(--ds-ink, #09090b); text-decoration: underline; text-decoration-color: var(--ds-rule, #e4e4e7); text-underline-offset: 4px; transition: text-decoration-color 200ms; } .ds-text-link svg { width: 14px; height: 14px; } .ds-text-link:hover { text-decoration-color: var(--ds-ink, #09090b); } .ds-text-link:focus-visible { outline: 1px solid var(--ds-ink, #09090b); outline-offset: 2px; }"
+    },
+    {
+      "name": "Lattice Cell",
+      "kind": "card",
+      "refersTo": "lattice-cell",
+      "description": "The system's replacement for a card. Square, flat, defined by its bottom and right rule. Hover tints almost imperceptibly.",
+      "html": "<div class=\"ds-cell\"><p class=\"ds-cell-label\">4 releases</p><h3 class=\"ds-cell-title\">We ship open AI research and tools.</h3><p class=\"ds-cell-body\">Papers, models, datasets, and software, released publicly by default.</p></div>",
+      "css": ".ds-cell { position: relative; padding: 24px; border-bottom: 1px solid var(--ds-rule, #e4e4e7); border-right: 1px solid var(--ds-rule, #e4e4e7); background: var(--ds-surface, #ffffff); border-radius: 0; transition: background-color 200ms; } .ds-cell:hover { background: var(--ds-hover-wash, #f9fafb); } .ds-cell-label { margin: 0 0 12px; font-family: var(--font-geist-mono), ui-monospace, Menlo, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ds-muted-ink, #71717a); } .ds-cell-title { margin: 0; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 18px; font-weight: 600; letter-spacing: -0.025em; color: var(--ds-ink, #09090b); } .ds-cell-body { margin: 6px 0 0; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 14px; line-height: 1.625; color: var(--ds-muted-ink, #71717a); }"
+    },
+    {
+      "name": "Hero Rules",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The signature component and the thesis of the system. Vertical hairlines at quarter pitch, inset to the container gutters so they land on the lattice's cell divisions below, masked to strengthen downward and settling from scaleX 1.06 on arrival.",
+      "html": "<div class=\"ds-hero\"><div class=\"ds-hero-rules\" aria-hidden=\"true\"></div><div class=\"ds-hero-body\"><p class=\"ds-hero-eyebrow\">Founded 2023</p><h1 class=\"ds-hero-title\">A student AI research organization</h1></div></div>",
+      "css": ".ds-hero { position: relative; overflow: hidden; padding: 0 16px; background: var(--ds-paper, #fafafa); } .ds-hero-rules { position: absolute; top: 0; bottom: 0; left: 16px; right: 16px; pointer-events: none; background-image: linear-gradient(to right, var(--ds-rule, #e4e4e7) 1px, transparent 1px); background-size: 25% 100%; mask-image: linear-gradient(to bottom, transparent, hsl(0 0% 0%) 92%); -webkit-mask-image: linear-gradient(to bottom, transparent, hsl(0 0% 0%) 92%); animation: ds-hero-settle 1200ms cubic-bezier(0.16, 1, 0.3, 1) both; } @keyframes ds-hero-settle { from { opacity: 0; transform: scaleX(1.06); } to { opacity: 1; transform: scaleX(1); } } .ds-hero-body { position: relative; padding: 96px 16px 64px; border-left: 1px solid var(--ds-rule, #e4e4e7); border-right: 1px solid var(--ds-rule, #e4e4e7); } .ds-hero-eyebrow { margin: 0 0 16px; font-family: var(--font-geist-mono), ui-monospace, Menlo, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ds-muted-ink, #71717a); } .ds-hero-title { margin: 0; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: clamp(2.25rem, 5vw, 3rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.025em; color: var(--ds-ink, #09090b); }"
+    },
+    {
+      "name": "Statistic Readout",
+      "kind": "custom",
+      "refersTo": "stat-cell",
+      "description": "One figure per ruled cell in tabular monospace. An unsubstantiated figure says so in words rather than showing a zero.",
+      "html": "<div class=\"ds-stat\"><div class=\"ds-stat-value\"><span class=\"ds-stat-affix\">&times;</span><span>80</span></div><p class=\"ds-stat-label\">GPUs available to members</p><p class=\"ds-stat-note\">Shared cluster, allocated per project.</p></div>",
+      "css": ".ds-stat { padding: 32px 24px; border-bottom: 1px solid var(--ds-rule, #e4e4e7); border-right: 1px solid var(--ds-rule, #e4e4e7); background: var(--ds-surface, #ffffff); transition: background-color 200ms; } .ds-stat:hover { background: var(--ds-hover-wash, #f9fafb); } .ds-stat-value { display: flex; align-items: baseline; gap: 2px; font-family: var(--font-geist-mono), ui-monospace, Menlo, monospace; font-size: 36px; font-weight: 600; line-height: 1; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; color: var(--ds-ink, #09090b); } .ds-stat-affix { font-size: 24px; color: var(--ds-muted-ink, #71717a); } .ds-stat-label { margin: 8px 0 0; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: -0.025em; color: var(--ds-ink, #09090b); } .ds-stat-note { margin: 4px 0 0; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 12px; line-height: 1.625; color: var(--ds-muted-ink, #71717a); }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Pill hover, two pixel ink underline on the active route. The underline travels on a spring and snaps under reduced motion.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Work</a><a class=\"ds-nav-link\" href=\"#\">About</a><a class=\"ds-nav-link\" href=\"#\">Governance</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2px; } .ds-nav-link { position: relative; padding: 8px 14px; border-radius: 9999px; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 14px; text-decoration: none; color: var(--ds-muted-ink, #71717a); transition: background-color 200ms, color 200ms; } .ds-nav-link:hover { background: var(--ds-muted-surface, #f4f4f5); color: var(--ds-ink, #09090b); } .ds-nav-link--active { color: var(--ds-ink, #09090b); } .ds-nav-link--active::after { content: \"\"; position: absolute; left: 14px; right: 14px; bottom: -6px; height: 2px; border-radius: 9999px; background: var(--ds-ink, #09090b); } .ds-nav-link:focus-visible { outline: 1px solid var(--ds-ink, #09090b); outline-offset: 2px; }"
+    },
+    {
+      "name": "Prose Link",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The only place Signal Blue sets text. Inside a published document the text colour and the underline swap values between themes rather than introducing a new blue.",
+      "html": "<p class=\"ds-prose\">Read the <a class=\"ds-link\" href=\"#\">conflict of interest policy</a> before applying.</p>",
+      "css": ".ds-prose { margin: 0; font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 15px; line-height: 1.75; color: color-mix(in srgb, var(--ds-ink, #09090b) 85%, transparent); } .ds-link { font-weight: 500; color: #0969da; text-decoration: underline; text-decoration-color: #80ccff; text-underline-offset: 2px; transition: text-decoration-color 200ms; } .ds-link:hover { text-decoration-color: #0969da; } .ds-link:focus-visible { outline: 1px solid #0969da; outline-offset: 2px; }"
+    },
+    {
+      "name": "Structural Spacer",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Where a section needs air rather than content. Diagonal hatch inside the same vertical rules, so the lattice never breaks.",
+      "html": "<div class=\"ds-spacer\"></div>",
+      "css": ".ds-spacer { height: 48px; border-left: 1px solid var(--ds-rule, #e4e4e7); border-right: 1px solid var(--ds-rule, #e4e4e7); border-bottom: 1px solid var(--ds-rule, #e4e4e7); color: var(--ds-rule, #e4e4e7); background-image: repeating-linear-gradient(315deg, currentColor 0 1px, transparent 1px 50%); background-size: 10px 10px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Instrument Panel",
+    "overview": "LinkScape reads as precision hardware rather than a student club. The visitor is a sixteen-year-old deciding whether these people are serious, and the interface answers before the copy does: everything is aligned to a rule, every number is monospaced and right-weighted, contrast is high, and nothing is decorated for the sake of looking designed. The feeling to aim for is a well-built measuring device. It is legible at a glance, it tells you exactly one thing per readout, and its restraint is what makes it credible.\n\nThe system is built from rules and cells, never from floating cards. Content sits inside a bordered lattice that runs the full width of the page, and the hero opens with vertical hairlines pitched to the exact column count of the band beneath it, so the ruling the visitor meets at the top of the page is literally the ruling that carries the content. Surfaces are flat without exception: depth is a one-pixel rule and a one-step tonal lift, and there is no shadow anywhere in the page body. Where a diagram, figure, or number can carry the point, it replaces the paragraph.\n\nColor is nearly absent by design. Ink on paper does the work, and a single GitHub-derived blue marks the things a visitor can act on. Three treatments are explicitly rejected: gradient-filled headings, any decorative background field that is not structurally connected to the page grid, and any atmospheric glow laid behind content. All three were present in an earlier build, all three are recognizable signatures of machine-generated interfaces, and this organization is judged on the appearance of being genuinely built.",
+    "keyCharacteristics": [
+      "Ruled cells, not cards. The border is the container.",
+      "Flat everywhere. No shadow carries structure, state, or atmosphere.",
+      "Monospace for every number, identifier, and label.",
+      "One accent color, reserved for action.",
+      "Both themes are authored, neither is derived.",
+      "The page must be readable and navigable with JavaScript disabled."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Signal Blue is the system's only chromatic color, and it means \"you can act on this.\" A chip, a tag, a category, or a heading never earns color. If something needs to be distinguished and it is not actionable, distinguish it with a rule, a monospace label, or position.", "section": "colors" },
+      { "name": "The Two Value Rule", "body": "Light and dark are separately authored, not algorithmically inverted. Every new color must be specified in both, and a design is not finished until it has been read in both.", "section": "colors" },
+      { "name": "The Rule Carries Structure", "body": "Before reaching for a background, a shadow, or a radius to separate two things, use a one-pixel border in Rule. That is the house style and it is almost always sufficient.", "section": "colors" },
+      { "name": "The Stencil Is Not A Color Rule", "body": "A value that exists only to make a mask opaque does not enter the palette, does not get a dark variant, and does not get reused as a fill. If it ever paints a pixel the visitor can see, it has become a color and must be justified as one.", "section": "colors" },
+      { "name": "The Engraved Label Rule", "body": "Anything that names, dates, categorizes, or identifies is set in Geist Mono, uppercase, at 11px with 0.14em tracking. Anything that argues or explains is set in Geist Sans. A visitor can tell fact from framing by typeface alone.", "section": "typography" },
+      { "name": "The Measured Eyebrow Rule", "body": "An eyebrow carries a count, a date, a status, or an identifier: \"12 projects\", \"Founded 2023\", \"4 published · 11 registered\". It never paraphrases the heading beneath it. If the only eyebrow you can write restates the section title, delete it. The engraved label is instrumentation, and a decorative caption set in that typeface turns the whole panel into a costume.", "section": "typography" },
+      { "name": "The Solid Heading Rule", "body": "Headings are one solid color. No gradient fill, no background-clip: text, no per-word tinting. A heading that needs a gradient to be interesting is a heading with nothing to say.", "section": "typography" },
+      { "name": "The Tabular Number Rule", "body": "Every figure a reader might compare or scan is monospaced with tabular figures. Numbers in running prose are exempt.", "section": "typography" },
+      { "name": "The Continuous Rule Rule", "body": "The two vertical container borders never break between sections. If a new section cannot draw them, it belongs inside an existing one.", "section": "layout" },
+      { "name": "The Flush Grid Rule", "body": "Grid cells clip their trailing borders against an overflow-hidden parent. Never hand-remove borders from the last item in a row; the column count changes at every breakpoint and the hand-removal will be wrong.", "section": "layout" },
+      { "name": "The Quarter Pitch Rule", "body": "Any full-bleed ruling laid behind content is inset to the container's own gutters and pitched so its lines fall on the lattice's cell divisions. A field that does not land on the grid is decoration, and decoration behind content is the thing this system exists to refuse.", "section": "layout" },
+      { "name": "The Flat Rule", "body": "Surfaces are flat at rest, flat on hover, and flat on press. There are no permitted shadows in the page body: not on a button, not on a card, not on a cell, not on a chip, not on a hero. A new box-shadow is a defect, and the correct fix is a rule or a tonal step.", "section": "elevation" },
+      { "name": "The No Atmosphere Rule", "body": "Depth is never suggested by light. No radial glow, no bloom, no vignette, no gradient fading into the page floor. If a region needs to feel separate, give it a border and a surface value.", "section": "elevation" },
+      { "name": "The Two File Figure Rule", "body": "Any generated graphic ships as a light and a dark variant. A single graphic that \"works on both\" is a graphic that is wrong on one.", "section": "components" },
+      { "name": "The No Placeholder Number Rule", "body": "An unsubstantiated figure is stated as absent in words. It is never zero, never an approximation, and never a dash.", "section": "components" },
+      { "name": "The One Ease Rule", "body": "Every transition in the system uses expo-out cubic-bezier(0.16, 1, 0.3, 1). New motion changes duration, not curve.", "section": "components" },
+      { "name": "The Reading Is Not An Entrance Rule", "body": "Continuous prose is never staggered. Animate the frame, the figure, and the rule; never the sentence the reader is trying to get to.", "section": "components" }
+    ],
+    "dos": [
+      "Do separate content with a one-pixel solid border in Rule before considering a background, radius, or shadow.",
+      "Do set every number, identifier, date, label, and stack tag in Geist Mono, and use tabular figures wherever numbers can be compared.",
+      "Do write eyebrows as measured keys: a count, a date, a status, an identifier.",
+      "Do author both themes explicitly, and read every new surface in both before calling it done.",
+      "Do keep the two vertical container rules unbroken from the header to the footer.",
+      "Do inset any full-bleed ruling to the container gutters and pitch it onto the lattice's cell divisions.",
+      "Do initialize animated values at their true state so the page is correct with JavaScript disabled, and let animation affect timing only, never the rendered tree.",
+      "Do let a figure, a readout, or a table replace a paragraph when it can carry the same meaning.",
+      "Do reserve Signal Blue for things the visitor can act on."
+    ],
+    "donts": [
+      "Don't apply a gradient to text, ever. No background-clip: text, no tinted headings.",
+      "Don't add a decorative background field that is unconnected to the page grid. Hero background structure must be an extension of the lattice, not a tiled pattern laid behind it.",
+      "Don't introduce a box-shadow. The system has none and needs none.",
+      "Don't add a glow, bloom, vignette, or radial atmosphere to suggest depth.",
+      "Don't use a dashed border. Every rule in the system is solid.",
+      "Don't give a chip a third tone or a hue. Default is neutral, strong is for status, and categories are named in words.",
+      "Don't round anything embedded in the lattice. Squares meet; pills float.",
+      "Don't add a type size between the nine ramp steps.",
+      "Don't write an eyebrow that restates the heading below it. Delete it instead.",
+      "Don't stagger paragraphs of continuous prose.",
+      "Don't invent a metric, a placeholder number, or a rounded estimate. If the figure is not substantiated, the design must hold with it absent.",
+      "Don't use an em dash in interface copy, and don't define anything by what it is not.",
+      "Don't branch the rendered markup on reduced motion. Change the transition, not the tree, or server and client will disagree and content will strand invisible."
+    ]
+  }
+}

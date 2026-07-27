@@ -35,9 +35,10 @@ export default function GovernancePage() {
   return (
     <>
       <PageHero
-        eyebrow="Transparency"
+        columns={3}
+        eyebrow={`${registerStats.published} published · ${registerStats.total} registered`}
         title="Governance"
-        lede="The rules we run on. Twenty-two documents published in full, and a register of all seventy-seven so you can see what exists."
+        lede="The rules we run on. 22 documents published in full, and a register of all 77 so you can see what exists."
       />
 
       <Section>
@@ -50,7 +51,7 @@ export default function GovernancePage() {
                 can download and keep.
               </p>
               <p>
-                Twenty-two of our {registerStats.total} documents are published
+                {registerStats.published} of our {registerStats.total} documents are published
                 here. The other {registerStats.total - registerStats.published}{" "}
                 cover security controls, financial procedure, HR, and internal
                 templates. Publishing our access controls would weaken them, and
@@ -124,7 +125,7 @@ export default function GovernancePage() {
                   </Link>
 
                   <div className="flex shrink-0 items-center gap-2 sm:flex-col sm:items-end">
-                    <Chip tone="green">{doc.status}</Chip>
+                    <Chip strong>{doc.status}</Chip>
                     <a
                       href={asset(`/governance/${doc.id}.pdf`)}
                       className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"

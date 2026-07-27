@@ -77,8 +77,8 @@ export const values = [
   },
   {
     name: "Impact",
-    line: "We measure outcomes, not activity.",
-    body: "We track what changed for the people we reached, publish the numbers, and say so when we miss a target.",
+    line: "We report what changed.",
+    body: "Every program states the outcome it aims for before it runs. We publish a figure once the record behind it is verified, and we say plainly when we miss a target.",
   },
   {
     name: "Safety",

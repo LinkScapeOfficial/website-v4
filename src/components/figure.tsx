@@ -18,7 +18,7 @@ export default function Figure({
   return (
     <figure className="my-8 first:mt-0">
       <div
-        className="surface relative w-full overflow-hidden rounded-xl border border-border"
+        className="surface relative w-full overflow-hidden rounded-lg border border-border"
         style={{ aspectRatio: ratio }}
       >
         {figure.single ? (

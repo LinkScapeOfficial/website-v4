@@ -28,7 +28,8 @@
     /* Surface the lattice reads against. Light mode keeps the original white. */
     --surface: 0 0% 100%;
     --hover: 210 20% 98%;
-    --shine: 147 197 253;
+    /* Opaque stencil for mask-image. A shape, never a palette colour. */
+    --stencil: 0 0% 0%;
   }
 
   .dark {
@@ -54,7 +55,6 @@
 
     --surface: 240 10% 4.6%;
     --hover: 240 5% 10%;
-    --shine: 84 174 255;
   }
 }
 
@@ -85,9 +85,6 @@ html {
   .lattice {
     @apply border-x border-border;
   }
-  .lattice-dashed {
-    @apply border-x border-dashed border-border;
-  }
   .surface {
     background-color: hsl(var(--surface));
   }
@@ -98,39 +95,27 @@ html {
     background-color: hsl(var(--hover));
   }
 
-  .heading-gradient {
-    @apply bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-500 bg-clip-text text-transparent;
-  }
-  .dark .heading-gradient {
-    @apply from-zinc-50 via-zinc-200 to-zinc-500;
-  }
-
   .mono-label {
     @apply font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground;
   }
 }
 
-/* The bloom that closes every hero. */
-.hero-shine {
-  background: radial-gradient(
-    ellipse at bottom center,
-    rgb(var(--shine) / 0.22) 0%,
-    rgb(var(--shine) / 0.05) 50%,
-    transparent 100%
+/*
+ * The hero's column rules. The pitch is set per route to the column count of the
+ * band directly below, so the ruling a visitor meets at the top of the page is
+ * the same ruling that carries the content. They strengthen downward, toward the
+ * body they belong to. A hero whose pitch does not match its band is a decorative
+ * field, which is the thing this replaced.
+ */
+.hero-rules {
+  background-image: linear-gradient(
+    to right,
+    hsl(var(--border)) 1px,
+    transparent 1px
   );
-}
-
-.grid-field {
-  background-image:
-    linear-gradient(to right, hsl(var(--border) / 0.55) 1px, transparent 1px),
-    linear-gradient(to bottom, hsl(var(--border) / 0.55) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 20%, transparent 75%);
-  -webkit-mask-image: radial-gradient(
-    ellipse 80% 60% at 50% 40%,
-    #000 20%,
-    transparent 75%
-  );
+  background-size: calc(100% / var(--hero-columns, 3)) 100%;
+  mask-image: linear-gradient(to bottom, transparent, hsl(var(--stencil)) 92%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, hsl(var(--stencil)) 92%);
 }
 
 .diagonal-hatch {
@@ -158,15 +143,15 @@ html {
   mask-image: linear-gradient(
     to right,
     transparent,
-    #000 8%,
-    #000 92%,
+    hsl(var(--stencil)) 8%,
+    hsl(var(--stencil)) 92%,
     transparent
   );
   -webkit-mask-image: linear-gradient(
     to right,
     transparent,
-    #000 8%,
-    #000 92%,
+    hsl(var(--stencil)) 8%,
+    hsl(var(--stencil)) 92%,
     transparent
   );
 }
@@ -204,7 +189,7 @@ html {
   @apply text-gh-blue-2 decoration-gh-blue-5 hover:decoration-gh-blue-2;
 }
 .prose-linkscape blockquote {
-  @apply my-6 border-l-2 border-gh-blue-4 bg-gh-blue-0/50 px-5 py-4 text-[14.5px];
+  @apply my-6 border-l-2 border-gh-blue-4 bg-gh-blue-0/50 px-5 py-4 text-[15px];
   color: hsl(var(--foreground) / 0.9);
 }
 .dark .prose-linkscape blockquote {
@@ -214,7 +199,7 @@ html {
   @apply mb-0;
 }
 .prose-linkscape table {
-  @apply my-6 w-full border-collapse text-[13.5px];
+  @apply my-6 w-full border-collapse text-[13px];
 }
 .prose-linkscape th {
   @apply border border-border bg-muted px-3 py-2 text-left font-semibold text-foreground;
@@ -223,7 +208,7 @@ html {
   @apply border border-border px-3 py-2 align-top;
 }
 .prose-linkscape pre {
-  @apply my-6 overflow-x-auto rounded-lg border border-border bg-muted p-4 font-mono text-[12.5px] leading-relaxed;
+  @apply my-6 overflow-x-auto rounded-lg border border-border bg-muted p-4 font-mono text-[13px] leading-relaxed;
 }
 .prose-linkscape code {
   @apply font-mono text-[0.9em];

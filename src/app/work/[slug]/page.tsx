@@ -6,6 +6,8 @@ import { SiGithub } from "@icons-pack/react-simple-icons";
 
 import PageHero from "@/components/layout/page-hero";
 import { Section } from "@/components/layout/section";
+import { FactList, FactRow } from "@/components/ui/fact-row";
+import { Tag, TagRow } from "@/components/ui/tag";
 import { Chip } from "@/components/ui/chip";
 import { Button } from "@/components/ui/button";
 import BlurFade from "@/components/animations/blur-fade";
@@ -40,20 +42,17 @@ export default async function WorkDetail({
 
   return (
     <>
-      <PageHero eyebrow={item.type} title={item.name} lede={item.summary}>
+      <PageHero
+        columns={4}
+        eyebrow={item.type}
+        title={item.name}
+        lede={item.summary}
+      >
         <div className="mt-5 flex flex-wrap items-center gap-2">
-          <Chip tone="neutral" mono>
-            {item.year}
-          </Chip>
-          <Chip
-            tone={item.status === "Under review" ? "amber" : "green"}
-          >
-            {item.status}
-          </Chip>
+          <Chip mono>{item.year}</Chip>
+          <Chip strong>{item.status}</Chip>
           {item.pillars.map((p) => (
-            <Chip key={p} tone="blue">
-              {pillarLabels[p]}
-            </Chip>
+            <Chip key={p}>{pillarLabels[p]}</Chip>
           ))}
         </div>
 
@@ -94,20 +93,18 @@ export default async function WorkDetail({
       ) : null}
 
       <Section topBorder={!item.notice}>
-        <div className="grid grid-cols-1 lg:grid-cols-7">
+        <div className="grid grid-cols-1 lg:grid-cols-8">
           {/* Narrative */}
-          <div className="border-b border-border p-6 sm:p-8 lg:col-span-5 lg:border-b-0 lg:border-r">
+          <div className="border-b border-border p-6 sm:p-8 lg:col-span-6 lg:border-b-0 lg:border-r">
             {item.figures?.[0] ? (
               <BlurFade inView>
                 <Figure figure={item.figures[0]} priority />
               </BlurFade>
             ) : null}
 
-            <div className="space-y-5 text-[15.5px] leading-[1.75] text-foreground/85">
+            <div className="space-y-5 text-[15px] leading-[1.75] text-foreground/85">
               {item.body.map((p, i) => (
-                <BlurFade key={i} inView delay={i * 0.04}>
-                  <p>{p}</p>
-                </BlurFade>
+                <p key={i}>{p}</p>
               ))}
             </div>
 
@@ -122,8 +119,7 @@ export default async function WorkDetail({
             ) : null}
 
             {item.results ? (
-              <BlurFade inView>
-                <div className="mt-12">
+              <div className="mt-12">
                   <p className="mono-label mb-3">Results</p>
                   <h2 className="mb-4 text-lg font-semibold tracking-tight">
                     {item.results.caption}
@@ -172,8 +168,7 @@ export default async function WorkDetail({
                       {item.results.footnote}
                     </p>
                   ) : null}
-                </div>
-              </BlurFade>
+              </div>
             ) : null}
 
             {item.credit ? (
@@ -184,29 +179,23 @@ export default async function WorkDetail({
           </div>
 
           {/* Facts rail */}
-          <aside className="flex flex-col lg:col-span-2">
+          <FactList className="lg:col-span-2">
             {item.facts?.map((f) => (
-              <div key={f.label} className="border-b border-border px-6 py-5">
-                <p className="mono-label">{f.label}</p>
-                <p className="mt-1.5 text-sm leading-relaxed">{f.value}</p>
-              </div>
+              <FactRow key={f.label} label={f.label} value={f.value} mono={f.mono} />
             ))}
             {item.stack.length > 0 ? (
-              <div className="border-b border-border px-6 py-5">
-                <p className="mono-label mb-3">Built with</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {item.stack.map((s) => (
-                    <span
-                      key={s}
-                      className="rounded border border-border px-1.5 py-0.5 font-mono text-[11px] text-muted-foreground"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <FactRow
+                label="Built with"
+                value={
+                  <TagRow className="mt-1.5">
+                    {item.stack.map((s) => (
+                      <Tag key={s}>{s}</Tag>
+                    ))}
+                  </TagRow>
+                }
+              />
             ) : null}
-          </aside>
+          </FactList>
         </div>
       </Section>
 

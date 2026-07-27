@@ -38,7 +38,7 @@ export default function Footer() {
   return (
     <footer className="surface border-t border-border">
       <div className="linkscape-wrapper">
-        <div className="lattice-dashed relative px-4 py-16">
+        <div className="lattice relative px-4 py-16">
           <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
             <div className="col-span-2">
               <Image
@@ -88,7 +88,7 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col gap-3 border-t border-dashed border-border pt-6 text-xs leading-relaxed text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 text-xs leading-relaxed text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-2xl">{site.fiscalSponsor.statement}</p>
             {/* No year: this is a static build, so a rendered year freezes
                 at deploy time and quietly goes stale. */}
