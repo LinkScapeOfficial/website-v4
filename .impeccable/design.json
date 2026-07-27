@@ -168,6 +168,51 @@
           "#f3f4f6",
           "#f9fafb"
         ]
+      },
+      "cat-research": {
+        "role": "tertiary",
+        "displayName": "Research Mark",
+        "canonical": "#8250df",
+        "tonalRamp": [
+          "#2e1461",
+          "#3e1f79",
+          "#512a97",
+          "#6639ba",
+          "#8250df",
+          "#a475f9",
+          "#c297ff",
+          "#ecd8ff"
+        ]
+      },
+      "cat-software": {
+        "role": "tertiary",
+        "displayName": "Software Mark",
+        "canonical": "#bc4c00",
+        "tonalRamp": [
+          "#471700",
+          "#5c2200",
+          "#762c00",
+          "#953800",
+          "#bc4c00",
+          "#e16f24",
+          "#fb8f44",
+          "#ffd8b5"
+        ]
+      },
+      "cat-event": {
+        "role": "tertiary",
+        "displayName": "Event Mark",
+        "canonical": "#1a7f37",
+        "tonalRamp": [
+          "#002d11",
+          "#003d16",
+          "#044f1e",
+          "#116329",
+          "#1a7f37",
+          "#2da44e",
+          "#4ac26b",
+          "#aceebb"
+        ]
       }
     },
     "typographyMeta": {
@@ -407,6 +452,14 @@
       "description": "Where a section needs air rather than content. Diagonal hatch inside the same vertical rules, so the lattice never breaks.",
       "html": "<div class=\"ds-spacer\"></div>",
       "css": ".ds-spacer { height: 48px; border-left: 1px solid var(--ds-rule, #e4e4e7); border-right: 1px solid var(--ds-rule, #e4e4e7); border-bottom: 1px solid var(--ds-rule, #e4e4e7); color: var(--ds-rule, #e4e4e7); background-image: repeating-linear-gradient(315deg, currentColor 0 1px, transparent 1px 50%); background-size: 10px 10px; }"
+    },
+    {
+      "name": "Category Chip",
+      "kind": "chip",
+      "refersTo": "chip-category",
+      "description": "Category as a validated mark beside the word that already names it. Text stays ink, so contrast never rests on the hue.",
+      "html": "<span class=\"ds-chip-cat\"><span class=\"ds-chip-mark\" style=\"background:#8250df\"></span>Research</span> <span class=\"ds-chip-cat\"><span class=\"ds-chip-mark\" style=\"background:#bc4c00\"></span>Software</span> <span class=\"ds-chip-cat\"><span class=\"ds-chip-mark\" style=\"background:#1a7f37\"></span>Event</span>",
+      "css": ".ds-chip-cat { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border: 1px solid color-mix(in srgb, var(--ds-ink, #09090b) 15%, transparent); border-radius: 9999px; background: color-mix(in srgb, var(--ds-ink, #09090b) 6%, transparent); color: var(--ds-ink, #09090b); font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 20px; } .ds-chip-mark { width: 6px; height: 6px; border-radius: 9999px; flex: none; }"
     }
   ],
   "narrative": {
@@ -505,6 +558,16 @@
         "name": "The Reading Is Not An Entrance Rule",
         "body": "Continuous prose is never staggered. Animate the frame, the figure, and the rule; never the sentence the reader is trying to get to.",
         "section": "components"
+      },
+      {
+        "name": "The Category Mark Rule",
+        "body": "Category is the one other thing permitted colour, and it wears it as a 6px mark beside a word that already says the same thing. Three marks exist and they are never recycled for a fourth meaning. Text stays ink, so contrast never depends on the mark.",
+        "section": "colors"
+      },
+      {
+        "name": "The Validated Set Rule",
+        "body": "The category marks were checked as a categorical palette in both themes against the real surface. Software and Event separate by deltaE 6.9 under deuteranopia, in the floor band, which is legal only because every mark ships beside its own word. Change a mark and the set is re-validated.",
+        "section": "colors"
       }
     ],
     "dos": [
@@ -531,7 +594,8 @@
       "Don't stagger paragraphs of continuous prose.",
       "Don't invent a metric, a placeholder number, or a rounded estimate. If the figure is not substantiated, the design must hold with it absent.",
       "Don't use an em dash in interface copy, and don't define anything by what it is not.",
-      "Don't branch the rendered markup on reduced motion. Change the transition, not the tree, or server and client will disagree and content will strand invisible."
+      "Don't branch the rendered markup on reduced motion. Change the transition, not the tree, or server and client will disagree and content will strand invisible.",
+      "Don't put category colour on text, and don't add a fourth category mark without re-running the palette validation."
     ]
   }
 }

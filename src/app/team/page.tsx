@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Mail } from "lucide-react";
 import { MarkGithubIcon } from "@primer/octicons-react";
 
@@ -9,7 +8,8 @@ import { Section, SectionHeader } from "@/components/layout/section";
 import Spotlight from "@/components/animations/spotlight";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
-import { people, tiers, byTier } from "@/content/team";
+import { Portrait } from "@/components/ui/portrait";
+import { people, tiers, byTier, rosterLine } from "@/content/team";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function Team() {
         columns={3}
         eyebrow={`${people.length} people`}
         title="Team"
-        lede="Three officers, three members, three fellows. Every officer publishes their own address."
+        lede={`${rosterLine()}. Every officer publishes their own address.`}
       />
 
       {tiers.map((tier, ti) => {
@@ -54,12 +54,11 @@ export default function Team() {
                     className="border-b border-border"
                   >
                     <div className="flex flex-col gap-6 p-6 sm:flex-row sm:items-start sm:p-8">
-                      <Image
+                      <Portrait
+                        name={person.name}
                         src={person.imageUrl}
-                        alt={person.name}
-                        width={120}
-                        height={120}
-                        className="h-20 w-20 shrink-0 rounded-lg bg-muted object-cover sm:h-24 sm:w-24"
+                        size={120}
+                        className="h-20 w-20 sm:h-24 sm:w-24"
                       />
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-3">
@@ -120,12 +119,11 @@ export default function Team() {
                     className="border-b border-r border-border"
                   >
                     <div className="flex h-full flex-col items-start gap-4 p-6">
-                      <Image
+                      <Portrait
+                        name={person.name}
                         src={person.imageUrl}
-                        alt={person.name}
-                        width={96}
-                        height={96}
-                        className="h-16 w-16 rounded-lg bg-muted object-cover"
+                        size={96}
+                        className="h-16 w-16"
                       />
                       <div className="flex-1">
                         <p className="font-semibold tracking-tight">

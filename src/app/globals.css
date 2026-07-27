@@ -22,7 +22,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    --ring: 212.4 92.1% 44.5%;
     --radius: 0.5rem;
 
     /* Surface the lattice reads against. Light mode keeps the original white. */
@@ -30,6 +30,14 @@
     --hover: 210 20% 98%;
     /* Opaque stencil for mask-image. A shape, never a palette colour. */
     --stencil: 0 0% 0%;
+
+    /* Category marks. Validated as a categorical set: lightness band, chroma
+       floor, CVD separation, and contrast against this surface. The green and
+       orange pair sits in the CVD floor band, which is legal only because every
+       mark ships beside its own word. */
+    --cat-research: #8250df;
+    --cat-software: #bc4c00;
+    --cat-event: #1a7f37;
   }
 
   .dark {
@@ -51,10 +59,14 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 4% 16%;
     --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --ring: 211.4 100.0% 56.5%;
 
     --surface: 240 10% 4.6%;
     --hover: 240 5% 10%;
+
+    --cat-research: #a475f9;
+    --cat-software: #e16f24;
+    --cat-event: #2da44e;
   }
 }
 

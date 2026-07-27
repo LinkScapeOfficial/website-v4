@@ -44,33 +44,35 @@ export default function StatCell({
     <div
       ref={ref}
       className={cn(
-        "row-hover group relative border-b border-r border-border px-6 py-8",
+        "row-hover group relative border-b border-r border-border px-6 py-10 sm:py-14",
         className,
       )}
     >
-      <div className="flex items-baseline gap-0.5 font-mono text-3xl font-semibold tracking-tight tabular-nums sm:text-4xl">
+      <div className="flex items-baseline gap-0.5 font-mono text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">
         {pending ? (
-          <span className="font-mono text-base font-normal text-muted-foreground/70">
-            Not yet reported
+          <span className="font-mono text-lg font-normal leading-tight text-muted-foreground/70">
+            Not yet
+            <br />
+            reported
           </span>
         ) : (
           <>
             {stat.prefix ? (
-              <span className="text-xl text-muted-foreground sm:text-2xl">
+              <span className="text-3xl text-muted-foreground sm:text-4xl">
                 {stat.prefix}
               </span>
             ) : null}
             {/* Fixed locale so server and client agree on separators. */}
             <span>{display.toLocaleString("en-US")}</span>
             {stat.suffix ? (
-              <span className="text-xl text-muted-foreground sm:text-2xl">
+              <span className="text-3xl text-muted-foreground sm:text-4xl">
                 {stat.suffix}
               </span>
             ) : null}
           </>
         )}
       </div>
-      <p className="mt-2 text-sm font-medium tracking-tight">{stat.label}</p>
+      <p className="mt-4 text-sm font-medium tracking-tight">{stat.label}</p>
       {stat.note ? (
         <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
           {stat.note}

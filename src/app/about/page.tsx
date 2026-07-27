@@ -14,6 +14,7 @@ import BlurFade from "@/components/animations/blur-fade";
 import { Button } from "@/components/ui/button";
 import { FactList, FactRow } from "@/components/ui/fact-row";
 import { site, pillars, values } from "@/content/site";
+import { rosterLine } from "@/content/team";
 
 export const metadata: Metadata = {
   title: "About",
@@ -58,7 +59,7 @@ const facts = [
   { k: "Founded", v: site.founded, mono: true },
   { k: "Structure", v: "Fiscally sponsored project", mono: false },
   { k: "Fiscal sponsor", v: "Hack Club, 501(c)(3)", mono: true },
-  { k: "Team", v: "3 officers, 3 members, 3 fellows", mono: true },
+  { k: "Team", v: rosterLine(), mono: true },
   { k: "Compute", v: "80× NVIDIA H100", mono: true },
   { k: "Release default", v: "Open source", mono: false },
 ];

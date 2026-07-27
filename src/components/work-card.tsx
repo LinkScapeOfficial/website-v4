@@ -6,13 +6,7 @@ import { Chip } from "@/components/ui/chip";
 import { Tag, TagRow } from "@/components/ui/tag";
 import { cn } from "@/lib/utils";
 import { asset } from "@/lib/asset";
-import type { WorkItem, WorkType } from "@/content/work";
-
-const TYPE_LABEL: Record<WorkType, string> = {
-  research: "Research",
-  software: "Software",
-  event: "Event",
-};
+import { typeLabels, type WorkItem } from "@/content/work";
 
 export default function WorkCard({
   item,
@@ -34,7 +28,7 @@ export default function WorkCard({
         className="row-hover flex h-full flex-col p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
       >
         <div className="mb-4 flex items-center gap-2">
-          <Chip>{TYPE_LABEL[item.type]}</Chip>
+          <Chip category={item.type}>{typeLabels[item.type]}</Chip>
           <span className="mono-label">{item.year}</span>
           <ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </div>

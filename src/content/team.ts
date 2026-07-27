@@ -6,7 +6,8 @@ export interface Person {
   name: string;
   role: string;
   tier: Tier;
-  imageUrl: string;
+  /** Omit when no photograph exists. The roster renders an engraved plate instead. */
+  imageUrl?: string;
   github?: string;
   email?: string;
   term?: string;
@@ -96,6 +97,20 @@ export const people: Person[] = [
   },
 
   {
+    name: "Ricky Ren",
+    role: "Member",
+    tier: "members",
+    imageUrl: "https://avatars.githubusercontent.com/u/232997902",
+    github: "https://github.com/RickyRcx",
+  },
+  {
+    name: "Sean Li",
+    role: "Member",
+    tier: "members",
+    github: "https://github.com/makabaka1880",
+  },
+
+  {
     name: "Jett Chen",
     role: "Fellow, former Co-Founder",
     tier: "fellows",
@@ -119,3 +134,13 @@ export const people: Person[] = [
 ];
 
 export const byTier = (tier: Tier) => people.filter((p) => p.tier === tier);
+
+/** "3 officers, 5 members, 3 fellows", derived so it cannot drift from the roster. */
+export const rosterLine = () =>
+  [
+    [byTier("leadership").length, "officer"],
+    [byTier("members").length, "member"],
+    [byTier("fellows").length, "fellow"],
+  ]
+    .map(([n, word]) => `${n} ${word}${n === 1 ? "" : "s"}`)
+    .join(", ");

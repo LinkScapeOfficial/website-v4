@@ -31,7 +31,7 @@ export default function PageHero({
         <div
           className={cn(
             "lattice flex flex-col gap-4 px-4",
-            size === "tall" ? "pb-24 pt-52 sm:pt-72" : "pb-16 pt-32",
+            size === "tall" ? "pb-20 pt-40 sm:pt-52" : "pb-16 pt-32",
             className,
           )}
         >

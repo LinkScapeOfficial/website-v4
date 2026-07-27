@@ -13,6 +13,12 @@ colors:
   signal-blue-hairline: "#80ccff"
   signal-blue-edge: "#218bff"
   signal-blue-wash: "#ddf4ff"
+  cat-research: "#8250df"
+  cat-software: "#bc4c00"
+  cat-event: "#1a7f37"
+  cat-research-dark: "#a475f9"
+  cat-software-dark: "#e16f24"
+  cat-event-dark: "#2da44e"
   ink-dark: "#fafafa"
   paper-dark: "#09090b"
   surface-dark: "#0b0b0d"
@@ -267,10 +273,22 @@ in color syntax.
 
 ### Named Rules
 
-**The One Accent Rule.** Signal Blue is the system's only chromatic color, and it
-means "you can act on this." A chip, a tag, a category, or a heading never earns
-color. If something needs to be distinguished and it is not actionable, distinguish
-it with a rule, a monospace label, or position.
+**The One Accent Rule.** Signal Blue means "you can act on this," and nothing else
+uses it. Links, focus rings, and interactive affordances take it; a heading, a
+surface, or a piece of emphasis never does.
+
+**The Category Mark Rule.** Category is the one other thing permitted color, and it
+wears it as a mark rather than as text: a `6px` dot beside a word that already says
+the same thing. Three marks exist, Research, Software, and Event, they are fixed to
+those three types, and they are never recycled for a fourth meaning. Text stays ink,
+so contrast never depends on the mark.
+
+**The Validated Set Rule.** The category marks are a categorical palette and were
+checked as one, in both themes, against the real surface: lightness band, chroma
+floor, CVD separation, normal-vision separation, and contrast. Software and Event
+separate by ΔE 6.9 under deuteranopia, which sits in the floor band and is legal
+only because every mark ships beside its own word. Change a mark and the set is
+re-validated, or the word beside it is not optional decoration, it is the encoding.
 
 **The Two Value Rule.** Light and dark are separately authored, not algorithmically
 inverted. Every new color must be specified in both, and a design is not finished
@@ -454,11 +472,13 @@ in the system.
 
 ### Chips
 
-The chip has exactly two renderings, and the second is rationed.
+The chip has three renderings, and the last two are rationed.
 
 - **Default:** Full pill, one-pixel Rule border, Muted Surface fill at 60 percent,
   Muted Ink text, `10px` of horizontal padding at Supporting size. This is what a
-  category, a type, or a classification gets.
+  classification with no fixed category gets.
+- **Category:** The default geometry raised to ink, carrying a `6px` round mark in
+  the category color before the word. Research, Software, and Event only.
 - **Strong:** Full pill, border in Ink at 15 percent, fill in Ink at 6 percent, full
   Ink text. Reserved for a document or work **status**, the one chip on a screen the
   reader must resolve first. Never used for a category.

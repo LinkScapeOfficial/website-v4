@@ -12,7 +12,7 @@ import { Chip } from "@/components/ui/chip";
 import { Button } from "@/components/ui/button";
 import BlurFade from "@/components/animations/blur-fade";
 import Figure from "@/components/figure";
-import { work, bySlug, pillarLabels } from "@/content/work";
+import { work, bySlug, pillarLabels, typeLabels } from "@/content/work";
 
 export function generateStaticParams() {
   return work.map((w) => ({ slug: w.slug }));
@@ -49,6 +49,7 @@ export default async function WorkDetail({
         lede={item.summary}
       >
         <div className="mt-5 flex flex-wrap items-center gap-2">
+          <Chip category={item.type}>{typeLabels[item.type]}</Chip>
           <Chip mono>{item.year}</Chip>
           <Chip strong>{item.status}</Chip>
           {item.pillars.map((p) => (

@@ -8,14 +8,16 @@ import { Section, SectionHeader, LatticeSpacer } from "@/components/layout/secti
 import { LatticeGrid, LatticeCell } from "@/components/layout/lattice";
 import StatCell, { type Stat } from "@/components/stat-cell";
 import WorkCard from "@/components/work-card";
+import WorkFeature from "@/components/work-feature";
 import PartnerMarquee from "@/components/partner-marquee";
 import Spotlight from "@/components/animations/spotlight";
 import BlurFade from "@/components/animations/blur-fade";
 import { Button } from "@/components/ui/button";
 import { FactList, FactRow } from "@/components/ui/fact-row";
+import { Portrait } from "@/components/ui/portrait";
 import { site, pillars } from "@/content/site";
 import { featured, work } from "@/content/work";
-import { byTier } from "@/content/team";
+import { byTier, people, rosterLine } from "@/content/team";
 
 const stats: Stat[] = [
   {
@@ -30,9 +32,9 @@ const stats: Stat[] = [
     note: "Everything we have shipped, free to read and reuse.",
   },
   {
-    value: 9,
+    value: people.length,
     label: "People on the team",
-    note: "Three officers, three members, three fellows.",
+    note: `${rosterLine()}.`,
   },
   {
     label: "Students reached",
@@ -42,6 +44,7 @@ const stats: Stat[] = [
 
 export default function Home() {
   const leadership = byTier("leadership");
+  const proof = work.find((w) => w.results)!;
 
   return (
     <>
@@ -126,10 +129,77 @@ export default function Home() {
             </Button>
           }
         />
-        <div className="-mb-px -mr-px grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {featured.slice(0, 6).map((item) => (
+        <WorkFeature item={featured[0]} eyebrow="Latest research" />
+        <div className="-mb-px -mr-px grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          {featured.slice(1, 5).map((item) => (
             <WorkCard key={item.slug} item={item} />
           ))}
+        </div>
+      </Section>
+
+      <Section topBorder={false}>
+        <div className="grid grid-cols-1 lg:grid-cols-5">
+          <div className="border-b border-border p-8 sm:p-10 lg:col-span-2 lg:border-b-0 lg:border-r">
+            <p className="mono-label">The result, in full</p>
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+              {proof.results!.caption}
+            </h2>
+            <p className="mt-5 text-[15px] leading-[1.75] text-muted-foreground">
+              A gap that widens as the data gets harder means the model learned
+              something structural about writing, which is what scaling alone
+              cannot buy.
+            </p>
+            <Button asChild variant="outline" className="mt-7 rounded-full">
+              <Link href={`/work/${proof.slug}`}>
+                How it works
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="scroll-x p-6 sm:p-10 lg:col-span-3">
+            <table className="w-full min-w-[420px] border-collapse text-sm">
+              <thead>
+                <tr>
+                  {proof.results!.columns.map((c) => (
+                    <th
+                      key={c}
+                      className="border-b border-border pb-3 text-left font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground"
+                    >
+                      {c}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {proof.results!.rows.map((row, ri) => (
+                  <tr
+                    key={ri}
+                    className={
+                      ri === proof.results!.rows.length - 1
+                        ? "font-semibold"
+                        : ""
+                    }
+                  >
+                    {row.map((cell, ci) => (
+                      <td
+                        key={ci}
+                        className={`border-b border-border py-3 pr-4 ${
+                          ci > 0 ? "font-mono tabular-nums" : ""
+                        }`}
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {proof.results!.footnote ? (
+              <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
+                {proof.results!.footnote}
+              </p>
+            ) : null}
+          </div>
         </div>
       </Section>
 
@@ -198,12 +268,11 @@ export default function Home() {
           {leadership.map((person) => (
             <Spotlight key={person.name} className="border-b border-r border-border">
               <div className="flex h-full flex-col items-start gap-4 p-7">
-                <Image
+                <Portrait
+                  name={person.name}
                   src={person.imageUrl}
-                  alt={person.name}
-                  width={80}
-                  height={80}
-                  className="h-16 w-16 rounded-lg bg-muted object-cover"
+                  size={80}
+                  className="h-16 w-16"
                 />
                 <div>
                   <p className="font-semibold tracking-tight">{person.name}</p>

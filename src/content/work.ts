@@ -316,6 +316,12 @@ export const workTypes: { key: WorkType | "all"; label: string }[] = [
   { key: "event", label: "Events" },
 ];
 
+export const typeLabels: Record<WorkType, string> = {
+  research: "Research",
+  software: "Software",
+  event: "Event",
+};
+
 export const pillarLabels: Record<Pillar, string> = {
   impact: "Building Impact",
   talent: "Developing Talent",

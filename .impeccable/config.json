@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "src/app/globals.css"
+        ],
+        "createdAt": "2026-07-27T06:01:59.600Z",
+        "reason": "User confirmed: the diagonal hatch is drafting notation occupying its own band, not a field behind content"
+      }
+    ]
+  }
+}

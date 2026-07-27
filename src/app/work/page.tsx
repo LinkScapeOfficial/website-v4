@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/layout/page-hero";
-import { Section } from "@/components/layout/section";
+import { Section, SectionHeader } from "@/components/layout/section";
 import WorkFilter from "@/components/work-filter";
+import WorkFeature from "@/components/work-feature";
 import { work } from "@/content/work";
 
 export const metadata: Metadata = {
@@ -20,7 +21,15 @@ export default function WorkPage() {
         lede="Two research projects, two tools, one hackathon."
       />
       <Section>
-        <h2 className="sr-only">All work</h2>
+        <h2 className="sr-only">Lead project</h2>
+        <WorkFeature item={work[0]} eyebrow="Read this one first" />
+      </Section>
+      <Section topBorder={false}>
+        <SectionHeader
+          eyebrow={`${work.length} in total`}
+          title="The full index"
+          lede="Everything we have shipped, including the one above."
+        />
         <WorkFilter />
       </Section>
     </>
