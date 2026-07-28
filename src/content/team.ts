@@ -100,13 +100,14 @@ export const people: Person[] = [
     name: "Ricky Ren",
     role: "Member",
     tier: "members",
-    imageUrl: "https://avatars.githubusercontent.com/u/232997902",
+    imageUrl: "/team/ricky-ren.jpg",
     github: "https://github.com/RickyRcx",
   },
   {
     name: "Sean Li",
     role: "Member",
     tier: "members",
+    imageUrl: "https://avatars.githubusercontent.com/u/100058339",
     github: "https://github.com/makabaka1880",
   },
 
@@ -136,11 +137,13 @@ export const people: Person[] = [
 export const byTier = (tier: Tier) => people.filter((p) => p.tier === tier);
 
 /** "3 officers, 5 members, 3 fellows", derived so it cannot drift from the roster. */
+/** "1 officer", "3 officers". Every roster word here takes a plain -s plural. */
+export const plural = (n: number, word: string) =>
+  `${n} ${word}${n === 1 ? "" : "s"}`;
+
 export const rosterLine = () =>
   [
-    [byTier("leadership").length, "officer"],
-    [byTier("members").length, "member"],
-    [byTier("fellows").length, "fellow"],
-  ]
-    .map(([n, word]) => `${n} ${word}${n === 1 ? "" : "s"}`)
-    .join(", ");
+    plural(byTier("leadership").length, "officer"),
+    plural(byTier("members").length, "member"),
+    plural(byTier("fellows").length, "fellow"),
+  ].join(", ");

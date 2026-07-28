@@ -1,17 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { initials } from "@/lib/initials";
 import { asset } from "@/lib/asset";
-
-/** Initials, so a person without a photograph still has an identity on the page. */
-function initials(name: string) {
-  return name
-    .replace(/\(.*?\)/g, " ")
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? "")
-    .join("");
-}
 
 /**
  * A person's plate. Where no photograph exists the cell is hatched and engraved

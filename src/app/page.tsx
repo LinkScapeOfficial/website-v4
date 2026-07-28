@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { FactList, FactRow } from "@/components/ui/fact-row";
 import { Portrait } from "@/components/ui/portrait";
 import { site, pillars } from "@/content/site";
-import { bySlug, featured, work } from "@/content/work";
+import { featured, work } from "@/content/work";
 import { byTier, people, rosterLine } from "@/content/team";
 
 const stats: Stat[] = [
@@ -49,10 +49,6 @@ const stats: Stat[] = [
 export default function Home() {
   const leadership = byTier("leadership");
   const lead = featured[0];
-  // Pinned to the slug rather than to whichever item happens to carry a table,
-  // because the paragraph beside the figures reads this specific result.
-  const proof = bySlug("cnm-bert");
-  const proofResults = proof?.results;
 
   return (
     <>
@@ -144,75 +140,6 @@ export default function Home() {
           ))}
         </div>
       </Section>
-
-      {proof && proofResults ? (
-        <Section topBorder={false}>
-          <div className="grid grid-cols-1 lg:grid-cols-5">
-            <div className="border-b border-border p-8 sm:p-10 lg:col-span-2 lg:border-b-0 lg:border-r">
-              <p className="mono-label">The result, in full</p>
-              <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-                {proofResults.caption}
-              </h2>
-              <p className="mt-5 text-[15px] leading-[1.75] text-muted-foreground">
-                A gap that widens as the data gets harder means the model
-                learned something structural about writing, which is what
-                scaling alone cannot buy.
-              </p>
-              <Button asChild variant="outline" className="mt-7 rounded-full">
-                <Link href={`/work/${proof.slug}`}>
-                  How it works
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-            <div className="scroll-x p-6 sm:p-10 lg:col-span-3">
-              <table className="w-full min-w-[420px] border-collapse text-sm">
-                <thead>
-                  <tr>
-                    {proofResults.columns.map((c) => (
-                      <th
-                        scope="col"
-                        key={c}
-                        className="border-b border-border pb-3 text-left font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground"
-                      >
-                        {c}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {proofResults.rows.map((row, ri) => (
-                    <tr
-                      key={ri}
-                      className={
-                        ri === proofResults.rows.length - 1
-                          ? "font-semibold"
-                          : ""
-                      }
-                    >
-                      {row.map((cell, ci) => (
-                        <td
-                          key={ci}
-                          className={`border-b border-border py-3 pr-4 ${
-                            ci > 0 ? "font-mono tabular-nums" : ""
-                          }`}
-                        >
-                          {cell}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              {proofResults.footnote ? (
-                <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
-                  {proofResults.footnote}
-                </p>
-              ) : null}
-            </div>
-          </div>
-        </Section>
-      ) : null}
 
       <LatticeSpacer />
       <Section topBorder={false}>

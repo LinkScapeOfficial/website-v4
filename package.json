@@ -9,7 +9,10 @@
     "start": "next start",
     "lint": "next lint",
     "docs:build": "node scripts/build-governance.mjs",
-    "demo": "DEMO_EXPORT=1 next build && node scripts/export_redirects.mjs"
+    "demo": "DEMO_EXPORT=1 next build && node scripts/export_redirects.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.6.0",
@@ -43,8 +46,10 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.10",
     "eslint-config-prettier": "^8.10.0",
     "prettier": "3.0.1",
-    "prettier-plugin-tailwindcss": "^0.4.1"
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "vitest": "^4.1.10"
   }
 }
