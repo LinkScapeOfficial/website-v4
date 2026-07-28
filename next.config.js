@@ -10,7 +10,6 @@ const remotePatterns = [
   { protocol: "https", hostname: "avatars.githubusercontent.com" },
   { protocol: "https", hostname: "assets.hackclub.com" },
   { protocol: "https", hostname: "files.ohevan.com" },
-  { protocol: "https", hostname: "assets.ohevan.com" },
 ];
 
 // GitHub Pages serves a project site under /<repo>, so the export needs a

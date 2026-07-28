@@ -23,7 +23,7 @@ export default function Figure({
       >
         {figure.single ? (
           <Image
-            src={figure.src}
+            src={asset(figure.src)}
             alt={figure.alt}
             fill
             sizes="(max-width: 1024px) 100vw, 760px"
@@ -36,14 +36,14 @@ export default function Figure({
             <img
               src={asset(`${figure.src}-light.svg`)}
               alt={figure.alt}
-              className="absolute inset-0 h-full w-full p-3 sm:p-4 dark:hidden"
+              className="absolute inset-0 h-full w-full p-3 dark:hidden sm:p-4"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={asset(`${figure.src}-dark.svg`)}
               alt=""
               aria-hidden
-              className="absolute inset-0 hidden h-full w-full p-3 sm:p-4 dark:block"
+              className="absolute inset-0 hidden h-full w-full p-3 dark:block sm:p-4"
             />
           </>
         )}

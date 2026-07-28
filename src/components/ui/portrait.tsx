@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { asset } from "@/lib/asset";
 
 /** Initials, so a person without a photograph still has an identity on the page. */
 function initials(name: string) {
@@ -38,7 +39,7 @@ export function Portrait({
     return (
       <div className={frame}>
         <Image
-          src={src}
+          src={asset(src)}
           alt={name}
           width={size}
           height={size}

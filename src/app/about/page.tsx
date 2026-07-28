@@ -14,7 +14,7 @@ import BlurFade from "@/components/animations/blur-fade";
 import { Button } from "@/components/ui/button";
 import { FactList, FactRow } from "@/components/ui/fact-row";
 import { site, pillars, values } from "@/content/site";
-import { rosterLine } from "@/content/team";
+import { people, rosterLine } from "@/content/team";
 
 export const metadata: Metadata = {
   title: "About",
@@ -82,7 +82,7 @@ export default function About() {
               <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
                 Talent is everywhere. Compute is not.
               </h2>
-              <div className="mt-6 space-y-5 text-[15px] leading-[1.75] text-foreground/85">
+              <div className="text-foreground/85 mt-6 space-y-5 text-[15px] leading-[1.75]">
                 <p>
                   Plenty of teenagers could do serious AI work. Almost none of
                   them can finish a training run on a school laptop, and almost
@@ -96,9 +96,9 @@ export default function About() {
                   review and onto GitHub under an open licence.
                 </p>
                 <p>
-                  Ten of us run this, split between universities and high
-                  schools. We are the people doing the work and the people it
-                  aims to reach, which keeps the programs honest about what
+                  {people.length} of us run this, split between universities and
+                  high schools. We are the people doing the work and the people
+                  it aims to reach, which keeps the programs honest about what
                   actually helps.
                 </p>
                 <p>
@@ -112,7 +112,12 @@ export default function About() {
 
           <FactList as="aside">
             {facts.map((row) => (
-              <FactRow key={row.k} label={row.k} value={row.v} mono={row.mono} />
+              <FactRow
+                key={row.k}
+                label={row.k}
+                value={row.v}
+                mono={row.mono}
+              />
             ))}
           </FactList>
         </div>
@@ -226,18 +231,19 @@ export default function About() {
         />
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="border-b border-border p-8 lg:border-r">
-            <div className="space-y-4 text-[15px] leading-relaxed text-foreground/85">
+            <div className="text-foreground/85 space-y-4 text-[15px] leading-relaxed">
               <p>
                 LinkScape operates as a fiscally sponsored project of The Hack
                 Foundation, doing business as Hack Club, a 501(c)(3) nonprofit.
-                Hack Club holds the charitable status. Every donation, grant, and
-                expense moves through Hack Club Bank.
+                Hack Club holds the charitable status. Every donation, grant,
+                and expense moves through Hack Club Bank.
               </p>
               <p>
                 For a donor this is straightforward: your gift is tax-deductible
                 and Hack Club issues the receipt. For us it means their approval
-                process governs our spending and their auditors review our books,
-                and our time goes into programs instead of corporate paperwork.
+                process governs our spending and their auditors review our
+                books, and our time goes into programs instead of corporate
+                paperwork.
               </p>
               <p>
                 LinkScape itself is a program, not a separately incorporated
@@ -253,12 +259,29 @@ export default function About() {
           </div>
           <FactList>
             {[
-              { k: "Charitable status held by", v: "Hack Club, 501(c)(3)", mono: true },
+              {
+                k: "Charitable status held by",
+                v: "Hack Club, 501(c)(3)",
+                mono: true,
+              },
               { k: "Receipts issued by", v: "Hack Club Bank", mono: true },
-              { k: "Audited by", v: "Hack Club, alongside its other programs", mono: false },
-              { k: "LinkScape's legal form", v: "A sponsored program", mono: false },
+              {
+                k: "Audited by",
+                v: "Hack Club, alongside its other programs",
+                mono: false,
+              },
+              {
+                k: "LinkScape's legal form",
+                v: "A sponsored program",
+                mono: false,
+              },
             ].map((row) => (
-              <FactRow key={row.k} label={row.k} value={row.v} mono={row.mono} />
+              <FactRow
+                key={row.k}
+                label={row.k}
+                value={row.v}
+                mono={row.mono}
+              />
             ))}
           </FactList>
         </div>

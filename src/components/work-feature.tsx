@@ -35,7 +35,7 @@ export default function WorkFeature({
         {item.image ? (
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg border border-border bg-muted">
             <Image
-              src={item.image}
+              src={asset(item.image)}
               alt=""
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
@@ -82,7 +82,7 @@ export default function WorkFeature({
           <Chip mono>{item.year}</Chip>
         </div>
 
-        <p className="mt-5 text-[15px] leading-[1.75] text-foreground/85">
+        <p className="text-foreground/85 mt-5 text-[15px] leading-[1.75]">
           {item.summary}
         </p>
 

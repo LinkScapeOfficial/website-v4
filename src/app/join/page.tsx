@@ -22,19 +22,31 @@ const paths = [
     title: "Become a member",
     who: "Students who finish what they start",
     body: "You get cluster access, a project that matters, code review, and a vote on what we take on next. Tell us about something you built and what broke. That beats a resume.",
-    action: { label: "Write to us", href: `mailto:${site.email.general}` },
+    action: {
+      label: "Write to us",
+      href: `mailto:${site.email.general}`,
+      external: true,
+    },
   },
   {
     title: "Contribute to the code",
     who: "Anyone, member or not",
     body: "Our repositories are open. Pick up an issue, send a pull request, or file a bug we missed. Contributors who stay usually become members.",
-    action: { label: "Browse our repositories", href: site.social.github },
+    action: {
+      label: "Browse our repositories",
+      href: site.social.github,
+      external: true,
+    },
   },
   {
     title: "Come to an event",
     who: "Middle and high school students",
     body: "Our hackathons are built for people who have never shipped anything. Arrive Saturday with nothing, demo something that runs on Sunday, leave with people you keep building with.",
-    action: { label: "See SH Hacks", href: "https://www.shhacks.com/" },
+    action: {
+      label: "See SH Hacks",
+      href: "https://www.shhacks.com/",
+      external: true,
+    },
   },
   {
     title: "Partner with us",
@@ -100,7 +112,10 @@ export default function Join() {
         />
         <LatticeGrid cols={2}>
           {paths.map((p) => (
-            <Spotlight key={p.title} className="border-b border-r border-border">
+            <Spotlight
+              key={p.title}
+              className="border-b border-r border-border"
+            >
               <div className="flex h-full flex-col p-7">
                 <h3 className="text-lg font-semibold tracking-tight">
                   {p.title}
@@ -109,7 +124,11 @@ export default function Join() {
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {p.body}
                 </p>
-                <TextLink href={p.action.href} className="mt-6">
+                <TextLink
+                  href={p.action.href}
+                  external={p.action.external}
+                  className="mt-6"
+                >
                   {p.action.label}
                 </TextLink>
               </div>
@@ -132,7 +151,7 @@ export default function Join() {
               <div className="sm:col-span-3">
                 <p className="mono-label">{e.k}</p>
               </div>
-              <p className="text-sm leading-relaxed text-foreground/85 sm:col-span-9">
+              <p className="text-foreground/85 text-sm leading-relaxed sm:col-span-9">
                 {e.v}
               </p>
             </div>
@@ -183,8 +202,8 @@ export default function Join() {
               Read the code first
             </h2>
             <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Fourteen public repositories. The fastest way to decide whether you
-              want to be here.
+              Fourteen public repositories. The fastest way to decide whether
+              you want to be here.
             </p>
           </div>
           <Button asChild variant="outline" className="shrink-0 rounded-full">

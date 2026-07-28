@@ -9,7 +9,7 @@ import {
   SectionHeader,
   LatticeSpacer,
 } from "@/components/layout/section";
-import { LatticeGrid, LatticeCell } from "@/components/layout/lattice";
+import { LatticeGrid } from "@/components/layout/lattice";
 import StatCell, { type Stat } from "@/components/stat-cell";
 import WorkCard from "@/components/work-card";
 import WorkFeature from "@/components/work-feature";
@@ -125,13 +125,13 @@ export default function Home() {
       </Section>
       <Section topBorder={false}>
         <SectionHeader
-          eyebrow={`${featured.length} of ${work.length} shown`}
+          eyebrow={`${work.length} projects`}
           title="What we have built"
           lede="Two research projects, two tools people use daily, and the hackathon where most of us met."
           action={
             <Button asChild variant="outline" className="rounded-full">
               <Link href="/work">
-                See everything
+                Open the index
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

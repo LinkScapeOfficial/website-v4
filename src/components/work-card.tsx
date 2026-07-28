@@ -15,17 +15,13 @@ export default function WorkCard({
   item: WorkItem;
   className?: string;
 }) {
-  const diagram = item.image
-    ? undefined
-    : item.figures?.find((f) => !f.single);
+  const diagram = item.image ? undefined : item.figures?.find((f) => !f.single);
 
   return (
-    <Spotlight
-      className={cn("border-b border-r border-border", className)}
-    >
+    <Spotlight className={cn("border-b border-r border-border", className)}>
       <Link
         href={`/work/${item.slug}`}
-        className="row-hover flex h-full flex-col p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
+        className="row-hover flex h-full flex-col p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
       >
         <div className="mb-4 flex items-center gap-2">
           <Chip category={item.type}>{typeLabels[item.type]}</Chip>
@@ -36,7 +32,7 @@ export default function WorkCard({
         {item.image ? (
           <div className="relative mb-5 aspect-[16/9] w-full overflow-hidden rounded-lg border border-border bg-muted">
             <Image
-              src={item.image}
+              src={asset(item.image)}
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
