@@ -65,7 +65,12 @@ export default function WorkFeature({
         <p className="mono-label">{eyebrow}</p>
 
         <h3 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-          <Link href={`/work/${item.slug}`} className="focus-visible:outline-none">
+          {/* The ring rides the overlay, not the heading text, so keyboard focus
+              outlines the whole band the pointer can already click. */}
+          <Link
+            href={`/work/${item.slug}`}
+            className="focus-visible:outline-none [&:focus-visible>span]:ring-2 [&:focus-visible>span]:ring-inset [&:focus-visible>span]:ring-ring"
+          >
             <span className="absolute inset-0" aria-hidden="true" />
             {item.name}
           </Link>

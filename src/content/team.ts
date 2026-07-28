@@ -23,7 +23,7 @@ export const tiers: {
     key: "leadership",
     title: "Leadership",
     blurb:
-      "Three officers, each with a written remit under the Ordinance. Their contact addresses are below and they answer their own mail.",
+      "Every officer holds a written remit under the Ordinance. Their contact addresses are below and they answer their own mail.",
   },
   {
     key: "members",

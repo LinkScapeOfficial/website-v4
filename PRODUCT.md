@@ -57,8 +57,9 @@ source pack is deliberately excluded from the repository. Published documents ar
 labeled **Adopted**; no document is ever labeled a draft.
 
 Three officers lead: CEO Thomas Wu, CFO Liqian (Eric) Yan, CTO Zigao Wang, reachable
-at thomas@, eric@, and zigao@linkscape.app. The team is three officers, three
-members, and three fellows.
+at thomas@, eric@, and zigao@linkscape.app. The roster is three officers, five
+members, and three fellows, and it is the single source in `src/content/team.ts`
+that every count on the site derives from.
 
 Work is organized under three pillars, and every program serves at least one:
 Building Impact, Developing Talent, Fostering Community.

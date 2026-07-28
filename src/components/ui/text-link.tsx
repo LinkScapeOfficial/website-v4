@@ -36,7 +36,11 @@ export function TextLink({
     >
       {children}
       {external ? (
-        <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+        <>
+          {/* The outbound arrow is decorative, so the warning has to be spoken. */}
+          <span className="sr-only"> (opens in a new tab)</span>
+          <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+        </>
       ) : (
         <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
       )}

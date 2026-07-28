@@ -85,8 +85,9 @@ export default function DocRegisterTable() {
                   <tr>
                     {["ID", "Document", "Domain", "Access"].map((h) => (
                       <th
+                        scope="col"
                         key={h}
-                        className="border-b border-border px-4 py-2.5 text-left font-mono text-[11px] uppercase tracking-wider text-muted-foreground"
+                        className="border-b border-border px-4 py-2.5 text-left font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground"
                       >
                         {h}
                       </th>

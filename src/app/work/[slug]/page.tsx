@@ -134,6 +134,7 @@ export default async function WorkDetail({
                         <tr>
                           {item.results.columns.map((c) => (
                             <th
+                              scope="col"
                               key={c}
                               className="border border-border bg-muted px-3 py-2 text-left font-semibold"
                             >

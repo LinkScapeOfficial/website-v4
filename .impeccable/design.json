@@ -501,7 +501,7 @@
       },
       {
         "name": "The Measured Eyebrow Rule",
-        "body": "An eyebrow carries a count, a date, a status, or an identifier: \"12 projects\", \"Founded 2023\", \"4 published \u00b7 11 registered\". It never paraphrases the heading beneath it. If the only eyebrow you can write restates the section title, delete it. The engraved label is instrumentation, and a decorative caption set in that typeface turns the whole panel into a costume.",
+        "body": "An eyebrow carries a count, a date, a status, or an identifier: \"12 projects\", \"Founded 2023\", \"4 published · 11 registered\". It never paraphrases the heading beneath it. If the only eyebrow you can write restates the section title, delete it. The engraved label is instrumentation, and a decorative caption set in that typeface turns the whole panel into a costume.",
         "section": "typography"
       },
       {
@@ -566,7 +566,7 @@
       },
       {
         "name": "The Validated Set Rule",
-        "body": "The category marks were checked as a categorical palette in both themes against the real surface. Software and Event separate by deltaE 6.9 under deuteranopia, in the floor band, which is legal only because every mark ships beside its own word. Change a mark and the set is re-validated.",
+        "body": "The category marks were checked as a categorical palette in both themes against the real surface. Software and Event separate by deltaE 6.9 under deuteranopia in light and 7.1 in dark, in the floor band, which is legal only because every mark ships beside its own word. To normal vision the same pair separates by 23.8 and 25.1. Change a mark and the set is re-validated.",
         "section": "colors"
       }
     ],
@@ -587,7 +587,7 @@
       "Don't introduce a box-shadow. The system has none and needs none.",
       "Don't add a glow, bloom, vignette, or radial atmosphere to suggest depth.",
       "Don't use a dashed border. Every rule in the system is solid.",
-      "Don't give a chip a third tone or a hue. Default is neutral, strong is for status, and categories are named in words.",
+      "Don't tint chip text or fill a chip with a hue. A category wears its color as the 6px mark and states itself in words; default is neutral and strong is status.",
       "Don't round anything embedded in the lattice. Squares meet; pills float.",
       "Don't add a type size between the nine ramp steps.",
       "Don't write an eyebrow that restates the heading below it. Delete it instead.",

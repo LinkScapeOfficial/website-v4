@@ -286,9 +286,10 @@ so contrast never depends on the mark.
 **The Validated Set Rule.** The category marks are a categorical palette and were
 checked as one, in both themes, against the real surface: lightness band, chroma
 floor, CVD separation, normal-vision separation, and contrast. Software and Event
-separate by ΔE 6.9 under deuteranopia, which sits in the floor band and is legal
-only because every mark ships beside its own word. Change a mark and the set is
-re-validated, or the word beside it is not optional decoration, it is the encoding.
+separate by ΔE 6.9 under deuteranopia in light and ΔE 7.1 in dark, which sits in the
+floor band and is legal only because every mark ships beside its own word. To normal
+vision the same pair separates by ΔE 23.8 and 25.1. Change a mark and the set is
+re-validated, and treat the word beside it as the encoding rather than as a caption.
 
 **The Two Value Rule.** Light and dark are separately authored, not algorithmically
 inverted. Every new color must be specified in both, and a design is not finished
@@ -485,8 +486,9 @@ The chip has three renderings, and the last two are rationed.
 - **Mono:** Either rendering may switch to Geist Mono at `11px` for an identifier or a
   version. That changes the typeface, not the tone.
 
-There is no third tone and no colored chip. Category, type, and status are carried by
-the word inside the chip in both themes.
+There is no fourth rendering. Chip text is ink or muted ink in both themes and never
+takes a hue; where a category is shown, the hue lives in the `6px` mark and the word
+beside it carries the same information on its own.
 
 ### Tags
 
@@ -639,8 +641,8 @@ the frame, the figure, and the rule; never the sentence the reader is trying to 
 - **Don't** introduce a `box-shadow`. The system has none and needs none.
 - **Don't** add a glow, bloom, vignette, or radial atmosphere to suggest depth.
 - **Don't** use a dashed border. Every rule in the system is solid.
-- **Don't** give a chip a third tone or a hue. Default is neutral, strong is for
-  status, and categories are named in words.
+- **Don't** tint chip text or fill a chip with a hue. A category wears its color as
+  the `6px` mark and states itself in words; default is neutral and strong is status.
 - **Don't** round anything embedded in the lattice. Squares meet; pills float.
 - **Don't** add a type size between the nine ramp steps.
 - **Don't** write an eyebrow that restates the heading below it. Delete it instead.

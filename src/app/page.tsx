@@ -4,7 +4,11 @@ import { ArrowRight, CircleArrowRight } from "lucide-react";
 import { MarkGithubIcon } from "@primer/octicons-react";
 
 import PageHero from "@/components/layout/page-hero";
-import { Section, SectionHeader, LatticeSpacer } from "@/components/layout/section";
+import {
+  Section,
+  SectionHeader,
+  LatticeSpacer,
+} from "@/components/layout/section";
 import { LatticeGrid, LatticeCell } from "@/components/layout/lattice";
 import StatCell, { type Stat } from "@/components/stat-cell";
 import WorkCard from "@/components/work-card";
@@ -16,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { FactList, FactRow } from "@/components/ui/fact-row";
 import { Portrait } from "@/components/ui/portrait";
 import { site, pillars } from "@/content/site";
-import { featured, work } from "@/content/work";
+import { bySlug, featured, work } from "@/content/work";
 import { byTier, people, rosterLine } from "@/content/team";
 
 const stats: Stat[] = [
@@ -44,7 +48,11 @@ const stats: Stat[] = [
 
 export default function Home() {
   const leadership = byTier("leadership");
-  const proof = work.find((w) => w.results)!;
+  const lead = featured[0];
+  // Pinned to the slug rather than to whichever item happens to carry a table,
+  // because the paragraph beside the figures reads this specific result.
+  const proof = bySlug("cnm-bert");
+  const proofResults = proof?.results;
 
   return (
     <>
@@ -129,7 +137,7 @@ export default function Home() {
             </Button>
           }
         />
-        <WorkFeature item={featured[0]} eyebrow="Latest research" />
+        {lead ? <WorkFeature item={lead} eyebrow="Latest research" /> : null}
         <div className="-mb-px -mr-px grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {featured.slice(1, 5).map((item) => (
             <WorkCard key={item.slug} item={item} />
@@ -137,71 +145,74 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section topBorder={false}>
-        <div className="grid grid-cols-1 lg:grid-cols-5">
-          <div className="border-b border-border p-8 sm:p-10 lg:col-span-2 lg:border-b-0 lg:border-r">
-            <p className="mono-label">The result, in full</p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-              {proof.results!.caption}
-            </h2>
-            <p className="mt-5 text-[15px] leading-[1.75] text-muted-foreground">
-              A gap that widens as the data gets harder means the model learned
-              something structural about writing, which is what scaling alone
-              cannot buy.
-            </p>
-            <Button asChild variant="outline" className="mt-7 rounded-full">
-              <Link href={`/work/${proof.slug}`}>
-                How it works
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-          <div className="scroll-x p-6 sm:p-10 lg:col-span-3">
-            <table className="w-full min-w-[420px] border-collapse text-sm">
-              <thead>
-                <tr>
-                  {proof.results!.columns.map((c) => (
-                    <th
-                      key={c}
-                      className="border-b border-border pb-3 text-left font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground"
-                    >
-                      {c}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {proof.results!.rows.map((row, ri) => (
-                  <tr
-                    key={ri}
-                    className={
-                      ri === proof.results!.rows.length - 1
-                        ? "font-semibold"
-                        : ""
-                    }
-                  >
-                    {row.map((cell, ci) => (
-                      <td
-                        key={ci}
-                        className={`border-b border-border py-3 pr-4 ${
-                          ci > 0 ? "font-mono tabular-nums" : ""
-                        }`}
+      {proof && proofResults ? (
+        <Section topBorder={false}>
+          <div className="grid grid-cols-1 lg:grid-cols-5">
+            <div className="border-b border-border p-8 sm:p-10 lg:col-span-2 lg:border-b-0 lg:border-r">
+              <p className="mono-label">The result, in full</p>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+                {proofResults.caption}
+              </h2>
+              <p className="mt-5 text-[15px] leading-[1.75] text-muted-foreground">
+                A gap that widens as the data gets harder means the model
+                learned something structural about writing, which is what
+                scaling alone cannot buy.
+              </p>
+              <Button asChild variant="outline" className="mt-7 rounded-full">
+                <Link href={`/work/${proof.slug}`}>
+                  How it works
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <div className="scroll-x p-6 sm:p-10 lg:col-span-3">
+              <table className="w-full min-w-[420px] border-collapse text-sm">
+                <thead>
+                  <tr>
+                    {proofResults.columns.map((c) => (
+                      <th
+                        scope="col"
+                        key={c}
+                        className="border-b border-border pb-3 text-left font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground"
                       >
-                        {cell}
-                      </td>
+                        {c}
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-            {proof.results!.footnote ? (
-              <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
-                {proof.results!.footnote}
-              </p>
-            ) : null}
+                </thead>
+                <tbody>
+                  {proofResults.rows.map((row, ri) => (
+                    <tr
+                      key={ri}
+                      className={
+                        ri === proofResults.rows.length - 1
+                          ? "font-semibold"
+                          : ""
+                      }
+                    >
+                      {row.map((cell, ci) => (
+                        <td
+                          key={ci}
+                          className={`border-b border-border py-3 pr-4 ${
+                            ci > 0 ? "font-mono tabular-nums" : ""
+                          }`}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              {proofResults.footnote ? (
+                <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
+                  {proofResults.footnote}
+                </p>
+              ) : null}
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      ) : null}
 
       <LatticeSpacer />
       <Section topBorder={false}>
@@ -262,11 +273,14 @@ export default function Home() {
         <SectionHeader
           eyebrow={`${leadership.length} officers`}
           title="Meet the team"
-          lede="Three officers run LinkScape. Each publishes their own address and answers it."
+          lede="Every officer publishes their own address and answers it."
         />
         <LatticeGrid cols={3}>
           {leadership.map((person) => (
-            <Spotlight key={person.name} className="border-b border-r border-border">
+            <Spotlight
+              key={person.name}
+              className="border-b border-r border-border"
+            >
               <div className="flex h-full flex-col items-start gap-4 p-7">
                 <Portrait
                   name={person.name}
