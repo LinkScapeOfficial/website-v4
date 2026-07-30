@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm exec tsc --noEmit
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Unit tests
+        run: pnpm test:coverage
+
+      # The site ships two ways from one codebase and they fail differently.
+      # The export is the one that catches a missing base path, so both run.
+      - name: Server build
+        run: pnpm build
+
+      - name: Static export
+        run: DEMO_EXPORT=1 BASE_PATH=/website-v4 pnpm exec next build
+
+      # A local image that skips src/lib/asset.ts renders as a bare path here
+      # and 404s under the base path on GitHub Pages while working on Vercel.
+      - name: Assert the export carries the base path on every local image
+        run: |
+          bare=$(grep -rhoE 'src="/[^"]+\.(jpe?g|png|svg|webp|avif)"' out \
+            | grep -v '^src="/website-v4/' | sort -u || true)
+          if [ -n "$bare" ]; then
+            echo "Local images missing the base path:"
+            echo "$bare"
+            exit 1
+          fi
+          echo "every local image path carries the base path"
