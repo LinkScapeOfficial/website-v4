@@ -38,11 +38,19 @@ jobs:
 
       # The site ships two ways from one codebase and they fail differently.
       # The export is the one that catches a missing base path, so both run.
+      # Both read the public repository count from the GitHub API at build
+      # time; the token only lifts the rate limit, which is shared per IP
+      # across runners. A build without it still succeeds and prints the
+      # figure as absent.
       - name: Server build
         run: pnpm build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Static export
         run: DEMO_EXPORT=1 BASE_PATH=/website-v4 pnpm exec next build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # A local image that skips src/lib/asset.ts renders as a bare path here
       # and 404s under the base path on GitHub Pages while working on Vercel.

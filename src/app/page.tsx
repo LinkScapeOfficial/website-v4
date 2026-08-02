@@ -22,8 +22,9 @@ import { Portrait } from "@/components/ui/portrait";
 import { site, pillars } from "@/content/site";
 import { featured, work } from "@/content/work";
 import { byTier, people, rosterLine } from "@/content/team";
+import { publicRepoCount } from "@/lib/github";
 
-const stats: Stat[] = [
+const buildStats = (repos: number | undefined): Stat[] => [
   {
     value: 80,
     suffix: "×",
@@ -31,7 +32,7 @@ const stats: Stat[] = [
     note: "Members train on the same class of hardware as a corporate lab.",
   },
   {
-    value: 14,
+    value: repos,
     label: "Public repositories",
     note: "Everything we have shipped, free to read and reuse.",
   },
@@ -46,7 +47,8 @@ const stats: Stat[] = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const stats = buildStats(await publicRepoCount());
   const leadership = byTier("leadership");
   const lead = featured[0];
 
