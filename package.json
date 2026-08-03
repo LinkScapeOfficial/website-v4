@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^4.1.10",
-    "eslint-config-prettier": "^8.10.0",
+    "eslint-config-prettier": "^10.1.8",
     "prettier": "3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "vitest": "^4.1.10"
