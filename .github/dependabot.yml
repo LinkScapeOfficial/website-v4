@@ -1,0 +1,45 @@
+version: 2
+
+updates:
+  # The actions went three majors stale before a runner deprecation notice
+  # surfaced it. Majors are grouped in here on purpose: an action major is
+  # usually a runtime bump, which is the thing that goes quietly out of date.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+    groups:
+      actions:
+        patterns:
+          - "*"
+
+  # CI runs typecheck, lint, the unit tests, and both builds on every pull
+  # request, so a green Dependabot PR has already proved the export still
+  # carries its base path.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore"
+    groups:
+      # One PR a week for the safe half, so the queue stays readable.
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # Next and React majors change rendering behaviour and the dual-mode
+      # build. They are upgraded deliberately, not merged from a bot PR.
+      - dependency-name: next
+        update-types: ["version-update:semver-major"]
+      - dependency-name: react
+        update-types: ["version-update:semver-major"]
+      - dependency-name: react-dom
+        update-types: ["version-update:semver-major"]
