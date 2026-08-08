@@ -71,7 +71,8 @@ typography:
     letterSpacing: "normal"
   readout:
     fontFamily: "var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace"
-    fontSize: "clamp(1.875rem, 4vw, 2.25rem)"
+    fontSize: "3rem"
+    fontSizeSm: "3.75rem"
     fontWeight: 600
     lineHeight: 1
     letterSpacing: "-0.025em"
@@ -338,7 +339,7 @@ adjacent value is factual rather than editorial.
   Meta size.
 - **Supporting** (400, `0.875rem`, 1.625, Muted Ink): Captions, cell descriptions,
   navigation, inline links, and secondary rows. The floor of the ramp in Geist Sans.
-- **Readout** (Geist Mono, 600, `clamp(1.875rem, 4vw, 2.25rem)`, 1, tabular figures):
+- **Readout** (Geist Mono, 600, `3rem` opening to `3.75rem` at the small breakpoint, 1, tabular figures):
   Statistics and headline numbers. Tabular figures are mandatory so a column of
   numbers aligns and so an animated count does not reflow the layout.
 - **Label** (Geist Mono, `11px`, uppercase, `0.14em`, Muted Ink): Eyebrows, section
@@ -348,12 +349,16 @@ adjacent value is factual rather than editorial.
   text, table cells in the document register, and the footer's legal line. It is
   the smallest size in the system and it never carries an argument, only a
   qualification on something already stated above it.
+- **Subhead** (600, `20px`, 1.4, `-0.025em`): A section heading inside a published
+  document, and a person's name on the roster. It sits between Title and the
+  Headline floor because both contexts need a heading that outranks a cell title
+  without opening a new band.
 - **Meta** (Geist Mono, 500, `13px`, 1.5): The value that sits under an engraved Label
   in a metadata grid: a version, a document identifier, an effective date. It is a
   readout at reading size, which is why it is monospaced but not uppercased. Figure
   captions and document tables share this size.
 
-The ramp has exactly these ten steps and no half-steps. `10.5px`, `12.5px`,
+The ramp has exactly these eleven steps and no half-steps. `10.5px`, `12.5px`,
 `13.5px`, `14.5px`, and `15.5px` do not exist anywhere in the build; introducing one
 is how a ramp stops being a ramp.
 
@@ -655,7 +660,7 @@ the frame, the figure, and the rule; never the sentence the reader is trying to 
 - **Don't** tint chip text or fill a chip with a hue. A category wears its color as
   the `6px` mark and states itself in words; default is neutral and strong is status.
 - **Don't** round anything embedded in the lattice. Squares meet; pills float.
-- **Don't** add a type size between the ten ramp steps.
+- **Don't** add a type size between the eleven ramp steps.
 - **Don't** write an eyebrow that restates the heading below it. Delete it instead.
 - **Don't** stagger paragraphs of continuous prose.
 - **Don't** invent a metric, a placeholder number, or a rounded estimate. If the

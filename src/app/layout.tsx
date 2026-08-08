@@ -16,7 +16,9 @@ export const metadata: Metadata = {
     template: "%s | LinkScape",
   },
   description: site.positioning,
-  icons: { shortcut: "/favicon.png" },
+  // One declaration, not shortcut plus an implied default: the browser was
+  // fetching an 85 KB icon twice per page. It is 180px and 29 KB now.
+  icons: { icon: "/favicon.png" },
   openGraph: {
     title: "LinkScape",
     description: site.positioning,

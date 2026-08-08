@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "framer-motion";
+import {
+  AnimatePresence,
+  LayoutGroup,
+  motion,
+  useReducedMotion,
+} from "framer-motion";
 import WorkCard from "@/components/work-card";
 import { work, workTypes, type WorkType } from "@/content/work";
 import { cn } from "@/lib/utils";
@@ -48,14 +53,10 @@ export default function WorkFilter() {
                 ) : null}
                 <span className="relative z-10">
                   {t.label}
-                  <span
-                    className={cn(
-                      "ml-1.5 font-mono text-[11px]",
-                      on ? "opacity-70" : "opacity-60",
-                    )}
-                  >
-                    {count}
-                  </span>
+                  {/* No opacity dimming. The count is already set apart by
+                      being mono and a step down; fading it put 11px text at
+                      2.3:1 on the inactive chip, well under AA. */}
+                  <span className="ml-1.5 font-mono text-[11px]">{count}</span>
                 </span>
               </button>
             );
