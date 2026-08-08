@@ -597,5 +597,8 @@
       "Don't branch the rendered markup on reduced motion. Change the transition, not the tree, or server and client will disagree and content will strand invisible.",
       "Don't put category colour on text, and don't add a fourth category mark without re-running the palette validation."
     ]
+  },
+  "typographyMeta": {
+    "fine": "The footnote tier at 12px. Statistic notes, disclaimer bands, chip and small-button text, register table cells, and the footer legal line. It never carries an argument, only a qualification on something stated above it."
   }
 }

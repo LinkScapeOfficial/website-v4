@@ -61,18 +61,14 @@ export default async function GovernanceDoc({
       <ReadingProgress />
 
       <PageHero
-        columns={4}
+        columns={{ base: 1, md: 1, lg: 4 }}
         eyebrow={`${doc.domain} · ${doc.id}`}
         title={doc.title}
         lede={doc.summary}
       >
         <div className="mt-5 flex flex-wrap items-center gap-3">
           <Chip strong>{doc.status}</Chip>
-          {doc.version ? (
-            <Chip mono>
-              v{doc.version}
-            </Chip>
-          ) : null}
+          {doc.version ? <Chip mono>v{doc.version}</Chip> : null}
           <Button asChild variant="outline" size="sm" className="rounded-full">
             <a href={asset(`/governance/${doc.id}.pdf`)}>
               <Download className="mr-2 h-3.5 w-3.5" />

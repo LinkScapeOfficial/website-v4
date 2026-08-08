@@ -11,9 +11,21 @@ export const metadata: Metadata = {
 };
 
 const elsewhere = [
-  { href: "/work", label: "Work", body: "Two research projects, two tools, one hackathon." },
-  { href: "/about", label: "About", body: "What LinkScape is and who runs it." },
-  { href: "/governance", label: "Governance", body: "Our policies, published in full." },
+  {
+    href: "/work",
+    label: "Work",
+    body: "Two research projects, two tools, one hackathon.",
+  },
+  {
+    href: "/about",
+    label: "About",
+    body: "What LinkScape is and who runs it.",
+  },
+  {
+    href: "/governance",
+    label: "Governance",
+    body: "Our policies, published in full.",
+  },
   { href: "/join", label: "Join", body: "Four ways in." },
 ];
 

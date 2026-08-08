@@ -50,7 +50,7 @@ export default function StatCell({
     >
       <div className="flex items-baseline gap-0.5 font-mono text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">
         {pending ? (
-          <span className="font-mono text-lg font-normal leading-tight text-muted-foreground/70">
+          <span className="font-mono text-lg font-normal leading-tight text-muted-foreground">
             Not yet
             <br />
             reported

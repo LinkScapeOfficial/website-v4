@@ -43,7 +43,7 @@ export default async function WorkDetail({
   return (
     <>
       <PageHero
-        columns={4}
+        columns={{ base: 1, md: 1, lg: 8 }}
         eyebrow={item.type}
         title={item.name}
         lede={item.summary}
@@ -106,7 +106,7 @@ export default async function WorkDetail({
               </BlurFade>
             ) : null}
 
-            <div className="space-y-5 text-[15px] leading-[1.75] text-foreground/85">
+            <div className="text-foreground/85 space-y-5 text-[15px] leading-[1.75]">
               {item.body.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -124,55 +124,55 @@ export default async function WorkDetail({
 
             {item.results ? (
               <div className="mt-12">
-                  <p className="mono-label mb-3">Results</p>
-                  <h2 className="mb-4 text-lg font-semibold tracking-tight">
-                    {item.results.caption}
-                  </h2>
-                  <div className="scroll-x -mx-2 px-2">
-                    <table className="w-full min-w-[420px] border-collapse text-sm">
-                      <thead>
-                        <tr>
-                          {item.results.columns.map((c) => (
-                            <th
-                              scope="col"
-                              key={c}
-                              className="border border-border bg-muted px-3 py-2 text-left font-semibold"
+                <p className="mono-label mb-3">Results</p>
+                <h2 className="mb-4 text-lg font-semibold tracking-tight">
+                  {item.results.caption}
+                </h2>
+                <div className="scroll-x -mx-2 px-2">
+                  <table className="w-full min-w-[420px] border-collapse text-sm">
+                    <thead>
+                      <tr>
+                        {item.results.columns.map((c) => (
+                          <th
+                            scope="col"
+                            key={c}
+                            className="border border-border bg-muted px-3 py-2 text-left font-semibold"
+                          >
+                            {c}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {item.results.rows.map((row, ri) => (
+                        <tr
+                          key={ri}
+                          className={
+                            ri === item.results!.rows.length - 1
+                              ? "font-semibold"
+                              : ""
+                          }
+                        >
+                          {row.map((cell, ci) => (
+                            <td
+                              key={ci}
+                              className={`border border-border px-3 py-2 ${
+                                ci > 0 ? "font-mono tabular-nums" : ""
+                              }`}
                             >
-                              {c}
-                            </th>
+                              {cell}
+                            </td>
                           ))}
                         </tr>
-                      </thead>
-                      <tbody>
-                        {item.results.rows.map((row, ri) => (
-                          <tr
-                            key={ri}
-                            className={
-                              ri === item.results!.rows.length - 1
-                                ? "font-semibold"
-                                : ""
-                            }
-                          >
-                            {row.map((cell, ci) => (
-                              <td
-                                key={ci}
-                                className={`border border-border px-3 py-2 ${
-                                  ci > 0 ? "font-mono tabular-nums" : ""
-                                }`}
-                              >
-                                {cell}
-                              </td>
-                            ))}
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  {item.results.footnote ? (
-                    <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
-                      {item.results.footnote}
-                    </p>
-                  ) : null}
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {item.results.footnote ? (
+                  <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
+                    {item.results.footnote}
+                  </p>
+                ) : null}
               </div>
             ) : null}
 
@@ -186,7 +186,12 @@ export default async function WorkDetail({
           {/* Facts rail */}
           <FactList className="lg:col-span-2">
             {item.facts?.map((f) => (
-              <FactRow key={f.label} label={f.label} value={f.value} mono={f.mono} />
+              <FactRow
+                key={f.label}
+                label={f.label}
+                value={f.value}
+                mono={f.mono}
+              />
             ))}
             {item.stack.length > 0 ? (
               <FactRow

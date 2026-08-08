@@ -34,7 +34,7 @@ export default function Donate() {
   return (
     <>
       <PageHero
-        columns={3}
+        columns={{ base: 1, md: 2, lg: 3 }}
         eyebrow="Tax-deductible · receipted by Hack Club"
         title="Donate"
         lede="Your donation puts a student in front of hardware they could never afford. Tax-deductible, receipted by Hack Club."
@@ -47,7 +47,10 @@ export default function Donate() {
         />
         <LatticeGrid cols={3}>
           {uses.map((u) => (
-            <Spotlight key={u.title} className="border-b border-r border-border">
+            <Spotlight
+              key={u.title}
+              className="border-b border-r border-border"
+            >
               <div className="flex h-full flex-col p-7">
                 <h3 className="text-base font-semibold tracking-tight">
                   {u.title}
@@ -81,7 +84,9 @@ export default function Donate() {
             </p>
             <div className="mt-3 flex flex-wrap gap-4 text-sm">
               <TextLink href="/governance/g-06">Sponsorship summary</TextLink>
-              <TextLink href="/governance/f-04">Fundraising guidelines</TextLink>
+              <TextLink href="/governance/f-04">
+                Fundraising guidelines
+              </TextLink>
             </div>
           </div>
         </div>

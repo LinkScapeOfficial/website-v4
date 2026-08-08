@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import BlurFadeStagger from "@/components/animations/blur-fade-stagger";
-import HeroRules from "@/components/animations/hero-rules";
+import HeroRules, {
+  type HeroColumns,
+} from "@/components/animations/hero-rules";
 import type { ReactNode } from "react";
 
 interface PageHeroProps {
@@ -10,7 +12,8 @@ interface PageHeroProps {
   children?: ReactNode;
   size?: "default" | "tall";
   /** Column count of the band directly below, so the hero rules land on it. */
-  columns?: number;
+  /** The band beneath, per breakpoint. See The Matched Pitch Rule. */
+  columns?: HeroColumns;
   className?: string;
 }
 
@@ -21,7 +24,7 @@ export default function PageHero({
   lede,
   children,
   size = "default",
-  columns = 3,
+  columns = { base: 1 },
   className,
 }: PageHeroProps) {
   return (
@@ -37,11 +40,11 @@ export default function PageHero({
         >
           <BlurFadeStagger initialDelay={0.08}>
             {eyebrow ? <p className="mono-label">{eyebrow}</p> : null}
-            <h1 className="w-full text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            <h1 className="text-balance w-full text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
               {title}
             </h1>
             {lede ? (
-              <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="text-pretty max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {lede}
               </p>
             ) : null}

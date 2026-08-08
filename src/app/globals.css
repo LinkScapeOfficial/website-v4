@@ -125,9 +125,24 @@ html {
     hsl(var(--border)) 1px,
     transparent 1px
   );
-  background-size: calc(100% / var(--hero-columns, 3)) 100%;
+  /* Pitch follows the lattice at each breakpoint. A one-column band draws no
+     interior rule, so the gradient stop lands past the element and nothing
+     repeats, which is the honest answer rather than a decorative division. */
+  background-size: calc(100% / var(--hero-cols, 1)) 100%;
   mask-image: linear-gradient(to bottom, transparent, hsl(var(--stencil)) 92%);
   -webkit-mask-image: linear-gradient(to bottom, transparent, hsl(var(--stencil)) 92%);
+}
+
+@media (min-width: 768px) {
+  .hero-rules {
+    background-size: calc(100% / var(--hero-cols-md, 1)) 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-rules {
+    background-size: calc(100% / var(--hero-cols-lg, 1)) 100%;
+  }
 }
 
 .diagonal-hatch {

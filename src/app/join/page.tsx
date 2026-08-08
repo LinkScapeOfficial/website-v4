@@ -79,7 +79,7 @@ export default function Join() {
   return (
     <>
       <PageHero
-        columns={2}
+        columns={{ base: 1, md: 2, lg: 2 }}
         eyebrow="Open worldwide · no prior ML required"
         title="Join us"
         lede="Four ways in. Three of them start today, without asking us first."

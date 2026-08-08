@@ -35,7 +35,7 @@ export default function GovernancePage() {
   return (
     <>
       <PageHero
-        columns={3}
+        columns={{ base: 1, md: 1, lg: 3 }}
         eyebrow={`${registerStats.published} published · ${registerStats.total} registered`}
         title="Governance"
         lede="The rules we run on. 22 documents published in full, and a register of all 77 so you can see what exists."
@@ -44,22 +44,24 @@ export default function GovernancePage() {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-3">
           <div className="border-b border-border p-8 sm:p-10 lg:col-span-2 lg:border-b-0 lg:border-r">
-            <div className="space-y-4 text-[15px] leading-relaxed text-foreground/85">
+            <div className="text-foreground/85 space-y-4 text-[15px] leading-relaxed">
               <p>
-                Read our constitution, our code of conduct, our AI ethics policy,
-                and our privacy policy in full below. Each one is also a PDF you
-                can download and keep.
+                Read our constitution, our code of conduct, our AI ethics
+                policy, and our privacy policy in full below. Each one is also a
+                PDF you can download and keep.
               </p>
               <p>
-                {registerStats.published} of our {registerStats.total} documents are published
-                here. The other {registerStats.total - registerStats.published}{" "}
-                cover security controls, financial procedure, HR, and internal
-                templates. Publishing our access controls would weaken them, and
-                the rest describe how we run rather than what we stand for.
+                {registerStats.published} of our {registerStats.total} documents
+                are published here. The other{" "}
+                {registerStats.total - registerStats.published} cover security
+                controls, financial procedure, HR, and internal templates.
+                Publishing our access controls would weaken them, and the rest
+                describe how we run rather than what we stand for.
               </p>
               <p>
-                The register below lists all {registerStats.total} anyway, marked
-                published or internal, so you can see exactly what we hold back.
+                The register below lists all {registerStats.total} anyway,
+                marked published or internal, so you can see exactly what we
+                hold back.
               </p>
             </div>
           </div>
@@ -83,7 +85,9 @@ export default function GovernancePage() {
       {groups.map((group, gi) => (
         <Section key={group.domain} topBorder={gi === 0}>
           <SectionHeader
-            eyebrow={`${group.docs.length} ${group.docs.length === 1 ? "document" : "documents"}`}
+            eyebrow={`${group.docs.length} ${
+              group.docs.length === 1 ? "document" : "documents"
+            }`}
             title={group.domain}
             lede={DOMAIN_BLURB[group.domain]}
           />

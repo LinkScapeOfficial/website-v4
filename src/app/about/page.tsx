@@ -68,7 +68,7 @@ export default function About() {
   return (
     <>
       <PageHero
-        columns={3}
+        columns={{ base: 1, md: 1, lg: 3 }}
         eyebrow={`Founded ${site.founded}`}
         title="About"
         lede="A youth-led AI nonprofit, run by students, backed by Hack Club, and governed by documents you can read on this site."

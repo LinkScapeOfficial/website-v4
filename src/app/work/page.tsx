@@ -15,7 +15,7 @@ export default function WorkPage() {
   return (
     <>
       <PageHero
-        columns={3}
+        columns={{ base: 1, md: 1, lg: 5 }}
         eyebrow={`${work.length} projects`}
         title="Work"
         lede="Two research projects, two tools, one hackathon."

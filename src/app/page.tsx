@@ -56,7 +56,7 @@ export default async function Home() {
     <>
       <PageHero
         size="tall"
-        columns={4}
+        columns={{ base: 2, md: 2, lg: 4 }}
         eyebrow={`Founded ${site.founded}`}
         title={site.tagline}
         lede="We give high-school and university students an 80-GPU cluster, a real research problem, and someone to review their code. Everything they build ships open source."

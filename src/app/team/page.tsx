@@ -22,7 +22,7 @@ export default function Team() {
   return (
     <>
       <PageHero
-        columns={3}
+        columns={{ base: 1, md: 2, lg: 3 }}
         eyebrow={`${people.length} people`}
         title="Team"
         lede={`${rosterLine()}. Every officer publishes their own address.`}
@@ -35,7 +35,9 @@ export default function Team() {
         return (
           <Section key={tier.key} topBorder={ti === 0}>
             <SectionHeader
-              eyebrow={`${group.length} ${group.length === 1 ? "person" : "people"}`}
+              eyebrow={`${group.length} ${
+                group.length === 1 ? "person" : "people"
+              }`}
               title={tier.title}
               lede={tier.blurb}
             />
@@ -65,11 +67,7 @@ export default function Team() {
                           <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
                             {person.name}
                           </h3>
-                          {person.term ? (
-                            <Chip mono>
-                              {person.term}
-                            </Chip>
-                          ) : null}
+                          {person.term ? <Chip mono>{person.term}</Chip> : null}
                         </div>
                         <p className="mt-1 text-base tracking-tight text-muted-foreground">
                           {person.role}
